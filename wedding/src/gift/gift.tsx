@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-type GiftProps = {
-  //
-};
-
-class Gift extends Component<GiftProps, any> {
-  public render() {
-    return <div>Gift</div>;
-  }
+export const Gift: React.FC = () => {
+  return (
+    <div>Gift</div>
+  );
 }
 
 export default Gift;

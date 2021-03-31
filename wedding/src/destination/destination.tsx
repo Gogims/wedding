@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-type DestinationProps = {
-  //
-};
-
-class Destination extends Component<DestinationProps, any> {
-  public render() {
-    return <div>Destination</div>;
-  }
+export const Destination: React.FC = () => {
+  return (
+    <div>Destination</div>
+  );
 }
 
 export default Destination;

@@ -1,22 +1,33 @@
-import React, { Component } from "react";
+import { createMuiTheme } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import Body from "./components/body";
-import Footer from "./components/footer";
-import Header from "./components/header";
 
-type LayoutProps = {
-  //
-};
+import Body from "./components/body/body";
+import Footer from "./components/footer/footer";
+import Header from "./components/header/header";
 
-class Layout extends Component<LayoutProps, any> {
-  public render(): JSX.Element {
-    return (
+export const Layout: React.FC = () => {
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#004d40',
+      },
+      secondary: {
+        main: '#ffcdd2',
+      },
+    },
+  });
+
+  return (
+    <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Header />
         <Body />
         <Footer />
-      </BrowserRouter>);
-  }
+      </BrowserRouter>
+    </ThemeProvider>
+  );
 }
 
 export default Layout;

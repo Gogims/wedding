@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-type TransportationProps = {
-  //
-};
-
-class Transportation extends Component<TransportationProps, any> {
-  public render() {
-    return <div>Transportation</div>;
-  }
+export const Transportation: React.FC = () => {
+  return (
+    <div>Transportation</div>
+  );
 }
 
 export default Transportation;

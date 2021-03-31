@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-type RsvpProps = {
-  //
-};
-
-class Rsvp extends Component<RsvpProps, any> {
-  public render() {
-    return <div>Rsvp</div>;
-  }
+export const Rsvp: React.FC = () => {
+  return (
+    <div>Rsvp</div>
+  );
 }
 
 export default Rsvp;

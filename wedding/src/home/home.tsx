@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-type HomeProps = {
-  //
-};
-
-class Home extends Component<HomeProps, any> {
-  public render() {
-    return <div>Home</div>;
-  }
+export const Home: React.FC = () => {
+  return (
+    <div>Home</div>
+  );
 }
 
 export default Home;

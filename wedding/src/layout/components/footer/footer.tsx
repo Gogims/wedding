@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-type FooterProps = {
-  //
-};
-
-class Footer extends Component<FooterProps, any> {
-  public render() {
-    return <div>Footer</div>;
-  }
+export const Footer: React.FC = () => {
+  return (
+    <div>Footer</div>
+  );
 }
 
 export default Footer;
