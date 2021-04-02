@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
+import TimelineStory from './components/timeline-story/timeline-story';
 
 export const Home: React.FC = () => {
   return (
-    <div>Home</div>
+    <TimelineStory />
   );
 }
 
