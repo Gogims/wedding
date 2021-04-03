@@ -14,9 +14,18 @@ export const Layout: React.FC = () => {
         main: '#004d40',
       },
       secondary: {
-        main: '#ffcdd2',
+        main: '#DA9681',
       },
     },
+    typography: {
+      fontFamily: [
+        'Roboto', 
+        'Helvetica', 
+        'Arial', 
+        'sans-serif',
+        'Marck Script'
+      ].join(',')
+    }
   });
 
   return (
