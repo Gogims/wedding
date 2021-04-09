@@ -22,8 +22,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     typography: {
         color: '#FFFFFF'
     }
-  }),
-);
+}));
 
 export const Clock: React.FC<ClockProps> = (props) => {
     const isDesktop = utility.IsDesktop();

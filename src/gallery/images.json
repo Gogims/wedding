@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Cayo Arena (DR)",
+        "subTitle": "This is not photoshopped!",
+        "isTall": false,
+        "src": "./images/gallery2.jpg"
+    },
+    {
+        "title": "Puerto Plata",
+        "subTitle": "We can't stop swimming!",
+        "isTall": false,
+        "src": "./images/gallery4.jpg"
+    },
+    {
+        "title": "Phoenix",
+        "subTitle": "Hiking in the middle of the city",
+        "isTall": false,
+        "src": "./images/gallery6.jpg"
+    },
+    {
+        "title": "Jarabacoa (DR)",
+        "subTitle": "Feeling adventurous",
+        "isTall": true,
+        "src": "./images/gallery1.jpg"
+    },
+    {
+        "title": "Las Vegas",
+        "subTitle": "A little bit of gambling",
+        "isTall": true,
+        "src": "./images/gallery5.jpg"
+    },
+    {
+        "title": "Caribbean Sea (DR)",
+        "subTitle": "Swimming with the fishes",
+        "isTall": true,
+        "src": "./images/gallery3.jpg"
+    },
+    {
+        "title": "Phoenix",
+        "subTitle": "Balloooons",
+        "isTall": false,
+        "src": "./images/gallery7.jpg"
+    },
+    {
+        "title": "Isla Saona",
+        "subTitle": "Muaaah",
+        "isTall": false,
+        "src": "./images/gallery8.jpg"
+    },
+    {
+        "title": "Isla Saona",
+        "subTitle": "Oh my!",
+        "isTall": false,
+        "src": "./images/gallery9.jpg"
+    },
+    {
+        "title": "Paramour, San Antonio",
+        "subTitle": "This is where we met a year before!",
+        "isTall": false,
+        "src": "./images/gallery10.jpg"
+    }
+]

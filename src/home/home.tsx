@@ -10,7 +10,10 @@ const useStyles = makeStyles(() => ({
     },
     image: {
         height: '100vh'
-    }
+    },
+    countdown: {
+      marginBottom: 100
+    }    
   }),
 );
 
@@ -23,7 +26,11 @@ export const Home: React.FC = () => {
       <Card className={classes.card} >
         <CardMedia className={classes.image} image={`./images/${imageName}.jpg`} title="Love Is All You Need" />
       </Card>
-      <Countdown />
+
+      <div className={classes.countdown}>
+        <Countdown />
+      </div>
+      
       <TimelineStory />
     </div>
   );
