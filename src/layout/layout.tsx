@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme, Grid } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
@@ -32,7 +32,9 @@ export const Layout: React.FC = () => {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Header />
-        <Body />
+        <Grid container justify="center">
+          <Body />
+        </Grid>
         <Footer />
       </BrowserRouter>
     </ThemeProvider>

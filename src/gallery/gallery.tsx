@@ -1,6 +1,5 @@
-import { Grid, GridListTile, GridListTileBar, IconButton, makeStyles, Theme } from "@material-ui/core";
+import { Grid, GridListTile, GridListTileBar, makeStyles, Theme } from "@material-ui/core";
 import React from "react";
-import InfoIcon from '@material-ui/icons/Info';
 import imageJson from './images.json';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -37,11 +36,7 @@ export const Gallery: React.FC = () => {
           <Grid key={i} item xs={12} sm={6} md={4}>
             <GridListTile className={classes.list} >
               <img className={image.isTall? classes.imageTall : classes.image} src={image.src} alt=""/>
-              <GridListTileBar title={image.title} subtitle={image.subTitle} actionIcon={
-                <IconButton className={classes.icon}>
-                  <InfoIcon />
-                </IconButton>
-              } />
+              <GridListTileBar title={image.title} subtitle={image.subTitle} />
             </GridListTile>
           </Grid>
         ))}
