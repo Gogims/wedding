@@ -5,7 +5,5 @@ export type RsvpForm = {
     hasGuest: string;
     guessName: string;
     hasTransportation: string;
-    flightImage?: FileList;
-    flight: string;
     comment: string;
 }

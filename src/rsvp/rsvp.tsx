@@ -1,10 +1,8 @@
-import { Button, Card, CardContent, FormControl, Grid, IconButton, InputLabel, Link, makeStyles, MenuItem, Select, Snackbar, TextField, Theme, Typography } from "@material-ui/core";
+import { Button, Card, CardContent, FormControl, Grid, InputLabel, Link, makeStyles, MenuItem, Select, Snackbar, TextField, Theme, Typography } from "@material-ui/core";
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { useForm, Controller } from 'react-hook-form';
-import { PhotoCamera } from "@material-ui/icons";
 import { RsvpForm } from "src/shared/models/rsvp-form";
-import utility from "src/shared/utility";
 import axios from "axios";
 import { Alert } from "@material-ui/lab";
 
@@ -42,27 +40,21 @@ export const Rsvp: React.FC = () => {
     control,
     watch,
     unregister,
-    register
+    reset
   } = useForm();
   const [isSuccessful, setIsSuccessful] = React.useState(false);
   const [isError, setIsError] = React.useState(false);
   const watchHasGuest: string = watch("hasGuest", "");
-  const watchFlightImage: FileList = watch("flightImage", "");
-  const imageName = watchFlightImage.length > 0 ?
-    watchFlightImage[0].name :
-    'Flight Information';
 
   const onSubmit = async (data: RsvpForm) => {
-    if (!!data.flightImage && data.flightImage.length > 0) {
-      const imageFile = data.flightImage?.item(0) as File;
-      data.flight = await utility.toBase64Async(imageFile);
-    }
-
-    delete data.flightImage;
-    const response = await axios.post(process.env.REACT_APP_API as string, {form: data});
+    const url = process.env.REACT_APP_API as string;
+    const response = await axios.post([url, 'rsvp'].join('/'), {form: data});
     
-    if (response.status === 200)
+    if (response.status === 200) {
       setIsSuccessful(true);
+      const emptyData = Object.keys(data).reduce((emptyForm, prop) => ({...emptyForm, [prop]: ""}), {});
+      reset(emptyData);
+    }
     else
       setIsError(true);
   };
@@ -73,13 +65,6 @@ export const Rsvp: React.FC = () => {
         <CardContent>
           <Typography gutterBottom variant="h5">
               RSVP
-          </Typography>
-          <Typography variant="caption" color="error">
-            IMPORTANT: We will have complimentary shuttles running from the Mexico City 
-            airport to Hacienda de Cortes on Friday, January 18th. Please send us a 
-            screenshot of your flight schedule by January 1st so that we can arrange the 
-            shuttle pickup times. We will provide a morning and afternoon shuttle return 
-            to the Mexico City airport on Sunday, February 20th. 
           </Typography>
         </CardContent>
         <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
@@ -121,19 +106,17 @@ export const Rsvp: React.FC = () => {
               <Select labelId="transportation-label" error={!!errors.hasTransportation} required {...field}>
                 <MenuItem value="yes">Yes</MenuItem>
                 <MenuItem value="no">No, I will get there by myself</MenuItem>
+                <MenuItem value="not sure">I am not sure yet</MenuItem>
               </Select>
             } control={control} name="hasTransportation" defaultValue="" rules={{ required: true }} />
           </FormControl>
-
-          <FormControl className={classes.formControl}>
-            <InputLabel></InputLabel>
-            <input type="file" hidden accept="image/*" id="flight-information" {...register("flightImage")} />
-              <label htmlFor="flight-information">
-                <IconButton color="primary" component="span" className={classes.imageName}>
-                  <PhotoCamera className={classes.flightButton} /> {imageName}
-                </IconButton>
-            </label>
-          </FormControl>
+          <Typography variant="caption" color="error">
+            IMPORTANT: We will have complimentary shuttles running from the Mexico City 
+            airport to Hacienda de Cortes on Friday, January 18th. Please send us a 
+            screenshot of your flight schedule by January 1st so that we can arrange the 
+            shuttle pickup times. We will provide a morning and afternoon shuttle return 
+            to the Mexico City airport on Sunday, February 20th. 
+          </Typography>
           
           <Controller render={({field}) => 
             <TextField {...field} multiline className={classes.formControl} label="Comments/Questions" />

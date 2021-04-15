@@ -1,5 +1,5 @@
 import React from 'react';
-import Countdown from './components/wedding-countdown/wedding-countdown';
+import WeddingCountdown from './components/wedding-countdown/wedding-countdown';
 import TimelineStory from './components/timeline-story/timeline-story';
 import { Card, CardMedia, makeStyles } from '@material-ui/core';
 import utility from 'src/shared/utility';
@@ -28,7 +28,7 @@ export const Home: React.FC = () => {
       </Card>
 
       <div className={classes.countdown}>
-        <Countdown />
+        <WeddingCountdown />
       </div>
       
       <TimelineStory />
