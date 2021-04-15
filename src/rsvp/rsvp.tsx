@@ -1,7 +1,12 @@
-import { Button, Card, CardContent, FormControl, Grid, InputLabel, Link, makeStyles, MenuItem, Select, TextField, Theme, Typography } from "@material-ui/core";
-import React, { useState } from "react";
+import { Button, Card, CardContent, FormControl, Grid, IconButton, InputLabel, Link, makeStyles, MenuItem, Select, Snackbar, TextField, Theme, Typography } from "@material-ui/core";
+import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { useForm, Controller } from 'react-hook-form';
+import { PhotoCamera } from "@material-ui/icons";
+import { RsvpForm } from "src/shared/models/rsvp-form";
+import utility from "src/shared/utility";
+import axios from "axios";
+import { Alert } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -20,6 +25,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   formControl: {
     width: '100%',
     marginTop: theme.spacing(3)
+  },
+  flightButton: {
+    marginRight: theme.spacing(3)
+  },
+  imageName: {
+    fontSize: theme.typography.button.fontSize
   }
 }));
 
@@ -30,10 +41,31 @@ export const Rsvp: React.FC = () => {
     formState: { errors },
     control,
     watch,
-    setValue
+    unregister,
+    register
   } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const [isSuccessful, setIsSuccessful] = React.useState(false);
+  const [isError, setIsError] = React.useState(false);
   const watchHasGuest: string = watch("hasGuest", "");
+  const watchFlightImage: FileList = watch("flightImage", "");
+  const imageName = watchFlightImage.length > 0 ?
+    watchFlightImage[0].name :
+    'Flight Information';
+
+  const onSubmit = async (data: RsvpForm) => {
+    if (!!data.flightImage && data.flightImage.length > 0) {
+      const imageFile = data.flightImage?.item(0) as File;
+      data.flight = await utility.toBase64Async(imageFile);
+    }
+
+    delete data.flightImage;
+    const response = await axios.post(process.env.REACT_APP_API as string, {form: data});
+    
+    if (response.status === 200)
+      setIsSuccessful(true);
+    else
+      setIsError(true);
+  };
 
   return (
     <Grid item xs={11} sm={6} md={4}>
@@ -52,40 +84,57 @@ export const Rsvp: React.FC = () => {
         </CardContent>
         <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
           <Controller render={({field}) => 
-            <TextField {...field} className={classes.firstFormControl} required label="First Name" />
-          } control={control} name="firstName" defaultValue=""/>
+            <TextField {...field} className={classes.firstFormControl} error={!!errors.firstName} required label="First Name" />
+          } control={control} name="firstName" defaultValue="" rules={{ required: true }}/>
+
           <Controller render={({field}) => 
-            <TextField {...field} className={classes.formControl} required label="Last Name" />
-          } control={control} name="lastName" defaultValue=""/>
+            <TextField {...field} className={classes.formControl} error={!!errors.lastName} required label="Last Name" />
+          } control={control} name="lastName" defaultValue="" rules={{ required: true }}/>
+
           <Controller render={({field}) => 
-            <TextField type="email" {...field} className={classes.formControl} required label="Email" />
-          } control={control} name="email" defaultValue=""/>
+            <TextField type="email" {...field} className={classes.formControl} error={!!errors.email} required label="Email" />
+          } control={control} name="email" defaultValue="" rules={{ required: true }}/>
+
           <FormControl className={classes.formControl}>
             <InputLabel id="guest-label" required>Are you bringing a guest?</InputLabel>
             <Controller render={({ field: { onBlur, onChange, value } }) => 
-              <Select labelId="guest-label" required onBlur={onBlur} value={value} onChange={e => {
-                setValue("guessName", "");
+              <Select labelId="guest-label" error={!!errors.hasGuest} required onBlur={onBlur} value={value} onChange={e => {
                 onChange(e);
+                if (e.target.value === "no")
+                  unregister("guessName");
               }}>
                 <MenuItem value="yes">Yes</MenuItem> 
                 <MenuItem value="no">No</MenuItem>
               </Select>
-            } control={control} name="hasGuest" defaultValue="" />
+            } control={control} name="hasGuest" defaultValue="" rules={{ required: true }}/>
           </FormControl>
+
           { watchHasGuest === "yes" && 
             <Controller render={({ field }) => 
-              <TextField  className={classes.formControl} required label="Guest Name(s)" {...field} />
-            } control={control} name="guessName" defaultValue=""/>
+              <TextField  className={classes.formControl} error={!!errors.guessName} required label="Guest Name(s)" {...field} />
+            } control={control} name="guessName" defaultValue="" rules={{ required: true }}/>
           }
+
           <FormControl className={classes.formControl}>
             <InputLabel id="transportation-label" required>Will you need an airport shuttle?</InputLabel>
             <Controller render={({field}) => 
-              <Select labelId="transportation-label" required {...field}>
+              <Select labelId="transportation-label" error={!!errors.hasTransportation} required {...field}>
                 <MenuItem value="yes">Yes</MenuItem>
                 <MenuItem value="no">No, I will get there by myself</MenuItem>
               </Select>
-            } control={control} name="hasTransportation" defaultValue="" />
+            } control={control} name="hasTransportation" defaultValue="" rules={{ required: true }} />
           </FormControl>
+
+          <FormControl className={classes.formControl}>
+            <InputLabel></InputLabel>
+            <input type="file" hidden accept="image/*" id="flight-information" {...register("flightImage")} />
+              <label htmlFor="flight-information">
+                <IconButton color="primary" component="span" className={classes.imageName}>
+                  <PhotoCamera className={classes.flightButton} /> {imageName}
+                </IconButton>
+            </label>
+          </FormControl>
+          
           <Controller render={({field}) => 
             <TextField {...field} multiline className={classes.formControl} label="Comments/Questions" />
           } control={control} name="comment" defaultValue=""/>
@@ -101,6 +150,17 @@ export const Rsvp: React.FC = () => {
           </FormControl>
         </form>
       </Card>
+
+      <Snackbar open={isSuccessful} autoHideDuration={6000} onClose={() => setIsSuccessful(false)}>
+        <Alert onClose={() => setIsSuccessful(false)} severity="success">
+          Form uploaded successfully!
+        </Alert>
+      </Snackbar>
+      <Snackbar open={isError} onClose={() => setIsError(false)}>
+        <Alert onClose={() => setIsError(false)} severity="error">
+          There was an error uploading the form. Please let us know at gogims@gmail.com or sssalma11@gmail.com
+        </Alert>
+      </Snackbar>
     </Grid>
   );
 }

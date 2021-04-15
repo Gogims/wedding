@@ -1,11 +1,30 @@
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 interface Utility {
-    IsDesktop: () => boolean
+    IsDesktop: () => boolean;
+    toBase64Async: (file: File) => Promise<string>;
 };
 
 const utility: Utility = {
-    IsDesktop: () => useMediaQuery('(min-width:960px)')
+    IsDesktop: () => useMediaQuery('(min-width:960px)'),
+    toBase64Async: (file: File) => new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            const result = reader.result?.toString();
+
+            if (!!result) {
+                let encoded = result.replace(/^data:(.*,)?/, '');
+
+                if ((encoded.length % 4) > 0) {
+                    encoded += '='.repeat(4 - (encoded.length % 4));
+                }
+
+                resolve(encoded);
+            }
+        };
+        reader.onerror = error => reject(error);
+    })
 };
 
 export default utility;
