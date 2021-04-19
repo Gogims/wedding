@@ -3,6 +3,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 interface Utility {
     IsDesktop: () => boolean;
     toBase64Async: (file: File) => Promise<string>;
+    getCleanTag: (hashtag: string) => string;
 };
 
 const utility: Utility = {
@@ -24,7 +25,14 @@ const utility: Utility = {
             }
         };
         reader.onerror = error => reject(error);
-    })
+    }),
+    getCleanTag: (hashtag: string) => {
+        const trimmedTag = hashtag.trim();
+
+        return trimmedTag.startsWith('#') ? 
+            trimmedTag.substring(1) : 
+            trimmedTag;
+    }
 };
 
 export default utility;

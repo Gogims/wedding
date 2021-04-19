@@ -1,8 +1,8 @@
 import { AppBar, makeStyles } from "@material-ui/core";
 import React from "react";
 import './header.scss'
-import { HeaderBar } from "../header-bar/header-bar";
-import HeaderMenu from "../header-menu/header-menu";
+import { HeaderBar } from "../header-bar";
+import HeaderMenu from "../header-menu";
 
 const useStyles = makeStyles((theme) => ({
   bar: {

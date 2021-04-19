@@ -2,7 +2,7 @@ import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import Countdown, { CountdownRendererFn } from 'react-countdown';
 import utility from 'src/shared/utility';
-import Clock from '../clock/clock';
+import Clock from './clock';
 
 const renderer : CountdownRendererFn = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
