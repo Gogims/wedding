@@ -66,72 +66,73 @@ export const Rsvp: React.FC = () => {
           <Typography gutterBottom variant="h5">
               RSVP
           </Typography>
-        </CardContent>
-        <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-          <Controller render={({field}) => 
-            <TextField {...field} className={classes.firstFormControl} error={!!errors.firstName} required label="First Name" />
-          } control={control} name="firstName" defaultValue="" rules={{ required: true }}/>
 
-          <Controller render={({field}) => 
-            <TextField {...field} className={classes.formControl} error={!!errors.lastName} required label="Last Name" />
-          } control={control} name="lastName" defaultValue="" rules={{ required: true }}/>
-
-          <Controller render={({field}) => 
-            <TextField type="email" {...field} className={classes.formControl} error={!!errors.email} required label="Email" />
-          } control={control} name="email" defaultValue="" rules={{ required: true }}/>
-
-          <FormControl className={classes.formControl}>
-            <InputLabel id="guest-label" required>Are you bringing a guest?</InputLabel>
-            <Controller render={({ field: { onBlur, onChange, value } }) => 
-              <Select labelId="guest-label" error={!!errors.hasGuest} required onBlur={onBlur} value={value} onChange={e => {
-                onChange(e);
-                if (e.target.value === "no")
-                  unregister("guessName");
-              }}>
-                <MenuItem value="yes">Yes</MenuItem> 
-                <MenuItem value="no">No</MenuItem>
-              </Select>
-            } control={control} name="hasGuest" defaultValue="" rules={{ required: true }}/>
-          </FormControl>
-
-          { watchHasGuest === "yes" && 
-            <Controller render={({ field }) => 
-              <TextField  className={classes.formControl} error={!!errors.guessName} required label="Guest Name(s)" {...field} />
-            } control={control} name="guessName" defaultValue="" rules={{ required: true }}/>
-          }
-
-          <FormControl className={classes.formControl}>
-            <InputLabel id="transportation-label" required>Will you need an airport shuttle?</InputLabel>
+          <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
             <Controller render={({field}) => 
-              <Select labelId="transportation-label" error={!!errors.hasTransportation} required {...field}>
-                <MenuItem value="yes">Yes</MenuItem>
-                <MenuItem value="no">No, I will get there by myself</MenuItem>
-                <MenuItem value="not sure">I am not sure yet</MenuItem>
-              </Select>
-            } control={control} name="hasTransportation" defaultValue="" rules={{ required: true }} />
-          </FormControl>
-          <Typography variant="caption" color="error">
-            IMPORTANT: We will have complimentary shuttles running from the Mexico City 
-            airport to Hacienda de Cortes on Friday, January 18th. Please send us a 
-            screenshot of your flight schedule by January 1st so that we can arrange the 
-            shuttle pickup times. We will provide a morning and afternoon shuttle return 
-            to the Mexico City airport on Sunday, February 20th. 
-          </Typography>
-          
-          <Controller render={({field}) => 
-            <TextField {...field} multiline className={classes.formControl} label="Comments/Questions" />
-          } control={control} name="comment" defaultValue=""/>
-          
-          <Typography variant="caption" color="error">
-            REMINDER: <Link component={RouterLink} to="/destination" underline="none" color="error">Hotel information is found on our website</Link>
-          </Typography>
+              <TextField {...field} className={classes.firstFormControl} error={!!errors.firstName} required label="First Name" />
+            } control={control} name="firstName" defaultValue="" rules={{ required: true }}/>
 
-          <FormControl className={classes.formControl}>
-            <Button type="submit" variant="contained" color="secondary">
-              Submit
-            </Button>
-          </FormControl>
-        </form>
+            <Controller render={({field}) => 
+              <TextField {...field} className={classes.formControl} error={!!errors.lastName} required label="Last Name" />
+            } control={control} name="lastName" defaultValue="" rules={{ required: true }}/>
+
+            <Controller render={({field}) => 
+              <TextField type="email" {...field} className={classes.formControl} error={!!errors.email} required label="Email" />
+            } control={control} name="email" defaultValue="" rules={{ required: true }}/>
+
+            <FormControl className={classes.formControl}>
+              <InputLabel id="guest-label" required>Are you bringing a guest?</InputLabel>
+              <Controller render={({ field: { onBlur, onChange, value } }) => 
+                <Select labelId="guest-label" error={!!errors.hasGuest} required onBlur={onBlur} value={value} onChange={e => {
+                  onChange(e);
+                  if (e.target.value === "no")
+                    unregister("guessName");
+                }}>
+                  <MenuItem value="yes">Yes</MenuItem> 
+                  <MenuItem value="no">No</MenuItem>
+                </Select>
+              } control={control} name="hasGuest" defaultValue="" rules={{ required: true }}/>
+            </FormControl>
+
+            { watchHasGuest === "yes" && 
+              <Controller render={({ field }) => 
+                <TextField  className={classes.formControl} error={!!errors.guessName} required label="Guest Name(s)" {...field} />
+              } control={control} name="guessName" defaultValue="" rules={{ required: true }}/>
+            }
+
+            <FormControl className={classes.formControl}>
+              <InputLabel id="transportation-label" required>Will you need an airport shuttle?</InputLabel>
+              <Controller render={({field}) => 
+                <Select labelId="transportation-label" error={!!errors.hasTransportation} required {...field}>
+                  <MenuItem value="yes">Yes</MenuItem>
+                  <MenuItem value="no">No, I will get there by myself</MenuItem>
+                  <MenuItem value="not sure">I am not sure yet</MenuItem>
+                </Select>
+              } control={control} name="hasTransportation" defaultValue="" rules={{ required: true }} />
+            </FormControl>
+            <Typography variant="caption" color="error">
+              IMPORTANT: We will have complimentary shuttles running from the Mexico City 
+              airport to Hacienda de Cortes on Friday, January 18th. Please send us a 
+              screenshot of your flight schedule by January 1st so that we can arrange the 
+              shuttle pickup times. We will provide a morning and afternoon shuttle return 
+              to the Mexico City airport on Sunday, February 20th. 
+            </Typography>
+            
+            <Controller render={({field}) => 
+              <TextField {...field} multiline className={classes.formControl} label="Comments/Questions" />
+            } control={control} name="comment" defaultValue=""/>
+            
+            <Typography variant="caption" color="error">
+              REMINDER: <Link component={RouterLink} to="/destination" underline="none" color="error">Hotel information is found on our website</Link>
+            </Typography>
+
+            <FormControl className={classes.formControl}>
+              <Button type="submit" variant="contained" color="secondary">
+                Submit
+              </Button>
+            </FormControl>
+          </form>
+        </CardContent>
       </Card>
 
       <Snackbar open={isSuccessful} autoHideDuration={6000} onClose={() => setIsSuccessful(false)}>
