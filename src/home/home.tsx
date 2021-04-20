@@ -1,11 +1,14 @@
 import React from 'react';
 import WeddingCountdown from './components/wedding-countdown';
 import TimelineStory from './components/timeline-story';
-import { Card, CardMedia, makeStyles } from '@material-ui/core';
+import { Card, CardMedia, makeStyles, Theme } from '@material-ui/core';
 import utility from 'src/shared/utility';
 import HashtagForm from './components/hashtag-form';
+import Showcase from './components/showcase';
+import bridesmaid from './bridesmaid.json';
+import groomsmen from './groomsmen.json';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme: Theme) => ({
     card: {
       width: '100%'
     },
@@ -13,8 +16,8 @@ const useStyles = makeStyles(() => ({
         height: '100vh'
     },
     countdown: {
-      marginBottom: 100
-    }    
+      marginBottom: theme.spacing(5)
+    }
   }),
 );
 
@@ -35,6 +38,9 @@ export const Home: React.FC = () => {
       <TimelineStory />
 
       <HashtagForm />
+
+      <Showcase showcaseUrl="images/bridesmaid.jpg" friends={bridesmaid} />
+      <Showcase showcaseUrl="images/groomsmen.jpg" friends={groomsmen} />
     </>
   );
 }

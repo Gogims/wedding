@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Paola (Pie - oh - la)",
+        "location": "Boston, MA",
+        "description": "Maid of honor, sister and best friend, defender, listener and conspirator, counselor and sharer of our sorrows and delights. A golden thread in life.",
+        "photo": "images/paola.jpg"
+    },
+    {
+        "name": "Christina",
+        "location": "Austin, TX",
+        "description": "My little bit of US childhood that can never be lost. Beautiful soul that seeks the best in others and accepts you for who you are. Life of the party and dancing queen.",
+        "photo": "images/christina.jpeg"
+    },
+    {
+        "name": "Jennifer",
+        "location": "Lexington, KY",
+        "description": "They say the best friends you make in college are friends you'll have for life. Sleepovers, Terry events, dancing nights are forever highlights of undergrad. She is fearless and persevering, prepared to run the world.",
+        "photo": "images/jennifer.jpeg"
+    },
+    {
+        "name": "Grecia",
+        "location": "San Antonio, TX",
+        "description": "As the years have passed, I'm now convinced fate brought us together to be sisters by heart. Indefinite UTSA memories and shenanigans in Costa Rica, Colombia, and soon DR and Mexico. Creative soul, esty queen.",
+        "photo": "images/grecia.jpeg"
+    },
+    {
+        "name": "Amanda",
+        "location": "Houston, TX",
+        "description": "There are friends, there are family, and then there are friends that become family (and neighbors). I knew it was something special when we met in Vegas and our very unique bond was formed. She guacs my world.",
+        "photo": "images/amanda.jpeg"
+    }
+]

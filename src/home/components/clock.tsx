@@ -36,7 +36,7 @@ export const Clock: React.FC<ClockProps> = (props) => {
     return (
         <div className={classes.root}>
             <Grid container justify="center" spacing={spacing}>
-                <Grid item xs={3} sm={2} md={1}>
+                <Grid item xs={3} md={2}>
                     <Paper className={classes.paper} square>
                         <Typography className={classes.typography} variant="h4">
                             {props.days}
@@ -46,7 +46,7 @@ export const Clock: React.FC<ClockProps> = (props) => {
                         </Typography>
                     </Paper>
                 </Grid>
-                <Grid item xs={3} sm={2} md={1}>
+                <Grid item xs={3} md={2}>
                     <Paper className={classes.paper} square>
                         <Typography className={classes.typography} variant="h4">
                             {props.hours}
@@ -56,7 +56,7 @@ export const Clock: React.FC<ClockProps> = (props) => {
                         </Typography>
                     </Paper>
                 </Grid>
-                <Grid item xs={3} sm={2} md={1}>
+                <Grid item xs={3} md={2}>
                     <Paper className={classes.paper} square>
                         <Typography className={classes.typography} variant="h4">
                             {props.minutes}
@@ -66,7 +66,7 @@ export const Clock: React.FC<ClockProps> = (props) => {
                         </Typography>
                     </Paper>
                 </Grid>
-                <Grid item xs={3} sm={2} md={1}>
+                <Grid item xs={3} md={2}>
                     <Paper className={classes.paper} square>
                         <Typography className={classes.typography} variant="h4">
                             {props.seconds}

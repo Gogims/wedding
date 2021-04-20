@@ -1,6 +1,6 @@
 import React from "react";
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
-import { Button, Link } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 export const GoogleCalendar: React.FC = () => {
     return (

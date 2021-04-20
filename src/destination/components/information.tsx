@@ -24,9 +24,9 @@ export const Information: React.FC = () => {
     return (
         <Card variant="outlined" className={classes.card} >
             <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                    <InfoIcon /> Information
-              </Typography>
+                <Typography color="textSecondary" gutterBottom className="inline-flex">
+                    <InfoIcon className="icon" /> Information
+                </Typography>
                 <div className={classes.content}>
                     <div className={classes.information}>Hotel &#38; Spa Hacienda de Cortes</div>
                     <div className={classes.information}>Date: February 22nd, 2022</div>

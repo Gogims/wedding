@@ -23,8 +23,8 @@ export const Trip: React.FC = () => {
     return (
         <Card variant="outlined" className={classes.card}>
             <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                    <BeachAccess /> Extend Your Trip!
+                <Typography color="textSecondary" gutterBottom className="inline-flex">
+                    <BeachAccess className="icon" /> Extend Your Trip!
               </Typography>
                 <div className={classes.content}>
                     <p>

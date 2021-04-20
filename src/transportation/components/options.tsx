@@ -12,9 +12,9 @@ export const Options: React.FC = () => {
             <Grid item xs={11} sm={6}>
                 <Card variant="outlined">
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>
-                            <AirportShuttleIcon /> Option A
-              </Typography>
+                        <Typography color="textSecondary" gutterBottom className="inline-flex">
+                            <AirportShuttleIcon className="icon" /> Option A
+                        </Typography>
                         <Typography variant="body1">
                             We will have complimentary shuttles for our guests from the airport to the hacienda
                 on Friday, February 19th, and returning to the airport on Sunday, February 20th. <b>If you will be
@@ -27,8 +27,8 @@ export const Options: React.FC = () => {
             <Grid item xs={11} sm={6}>
                 <Card variant="outlined">
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>
-                            <DirectionsCarIcon /> Option B
+                        <Typography color="textSecondary" gutterBottom className="inline-flex">
+                            <DirectionsCarIcon className="icon" /> Option B
               </Typography>
                         <Typography variant="body1">
                             Rent a car: Hacienda de Cortes is 1 hour 45 minutes away from the Mexico City airport. Rental car
@@ -40,8 +40,8 @@ export const Options: React.FC = () => {
             <Grid item xs={11} sm={6}>
                 <Card variant="outlined">
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>
-                            <DirectionsBusIcon /> Option C
+                        <Typography color="textSecondary" gutterBottom className="inline-flex">
+                            <DirectionsBusIcon className="icon" /> Option C
               </Typography>
                         <Typography variant="body1">
                             Local Bus: There are hourly departures from Mexico City Airport Terminal 1 to Cuernavaca Casino bus
@@ -54,8 +54,8 @@ export const Options: React.FC = () => {
             <Grid item xs={11} sm={6}>
                 <Card variant="outlined">
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>
-                            <EmojiTransportationIcon /> Option D
+                        <Typography color="textSecondary" gutterBottom className="inline-flex">
+                            <EmojiTransportationIcon className="icon" /> Option D
               </Typography>
                         <Typography variant="body1">
                             If you choose to extend your time in Cuernavaca, please let me know and we can put you in contact with the

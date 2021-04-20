@@ -46,7 +46,7 @@ export const HashtagForm: React.FC = () => {
         const tag = utility.getCleanTag(hashtag);
         const tags = !!tag ? hashtags.concat([tag]) : hashtags;
         const url = process.env.REACT_APP_API as string;
-        const response = await axios.post([url, 'hashtags'].join('/'), {form: tags});
+        const response = await axios.post([url, 'hashtag'].join('/'), {form: tags});
         
         if (response.status === 200) {
           setIsSuccessful(true);

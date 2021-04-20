@@ -23,8 +23,8 @@ export const OtherOption: React.FC = () => {
     return (
         <Card variant="outlined" className={classes.card} >
             <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                    <InfoIcon /> Alternate Options
+                <Typography color="textSecondary" gutterBottom className="inline-flex">
+                    <InfoIcon className="icon" /> Alternate Options
               </Typography>
                 <div className={classes.content}>
                     <p className={classes.information}>

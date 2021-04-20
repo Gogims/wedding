@@ -23,8 +23,8 @@ export const Schedule: React.FC = () => {
     return (
         <Card variant="outlined" className={classes.card}>
             <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                    <DateRangeIcon /> Wedding Day Schedule
+                <Typography color="textSecondary" gutterBottom className="inline-flex">
+                    <DateRangeIcon className="icon" /> Wedding Day Schedule
               </Typography>
                 <div className={classes.content}>
                     <div>
