@@ -5,6 +5,9 @@ import React, { useState } from 'react'
 import utility from 'src/shared/utility';
 
 const useStyles = makeStyles((theme: Theme) => ({
+    root: {
+        marginTop: theme.spacing(5)
+    },
     hashtag: {
       paddingTop: theme.spacing(15),
         [theme.breakpoints.down('sm')]: {
@@ -21,18 +24,15 @@ export const HashtagForm: React.FC = () => {
     const [isSuccessful, setIsSuccessful] = React.useState(false);
     const [isError, setIsError] = React.useState(false);
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        const code = e.key.charCodeAt(0);
-        const tag = utility.getCleanTag((e.target as HTMLInputElement).value);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const hashtag = (e.target as HTMLInputElement).value;
+        const tag = utility.getCleanTag(hashtag);
 
-        if (code === 32 && !!tag) {
+        if (hashtag.endsWith(' ') && !!tag) {
             setHashtags(hashtags.concat(tag));
             setHashtag('');
-        }
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setHashtag(e.target.value);
+        } else
+            setHashtag(e.target.value);
     };
 
     const removeHashtag = (index: number) => {
@@ -60,7 +60,7 @@ export const HashtagForm: React.FC = () => {
     ));
 
     return (
-        <Grid item xs={11} sm={6} md={4}>
+        <Grid item xs={11} sm={6} md={4} className={classes.root}>
             <Card>
                 <CardMedia image="images/hashtags.jpg" className={classes.hashtag} />
                 <CardContent>                
@@ -69,7 +69,6 @@ export const HashtagForm: React.FC = () => {
                             <FilledInput
                                 value={hashtag}
                                 onChange={handleChange}
-                                onKeyDown={handleKeyDown}
                                 startAdornment={<InputAdornment position="start">#</InputAdornment>}
                                 endAdornment={<Button type="submit" color="primary" variant="contained">Submit</Button>}
                             />

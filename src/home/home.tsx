@@ -37,10 +37,10 @@ export const Home: React.FC = () => {
       
       <TimelineStory />
 
-      <HashtagForm />
-
       <Showcase showcaseUrl="images/bridesmaid.jpg" friends={bridesmaid} />
       <Showcase showcaseUrl="images/groomsmen.jpg" friends={groomsmen} />
+
+      <HashtagForm />
     </>
   );
 }

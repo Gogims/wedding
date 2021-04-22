@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, FormControl, Grid, InputLabel, Link, makeStyles, MenuItem, Select, Snackbar, TextField, Theme, Typography } from "@material-ui/core";
+import { Button, Card, CardContent, CardMedia, FormControl, Grid, InputLabel, Link, makeStyles, MenuItem, Select, Snackbar, TextField, Theme, Typography } from "@material-ui/core";
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { useForm, Controller } from 'react-hook-form';
@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(5)
+  },
+  rsvp: {
+    height: 201
   },
   form: {
     paddingTop: theme.spacing(0),
@@ -62,11 +65,9 @@ export const Rsvp: React.FC = () => {
   return (
     <Grid item xs={11} sm={6} md={4}>
       <Card className={classes.root}>
-        <CardContent>
-          <Typography gutterBottom variant="h5">
-              RSVP
-          </Typography>
+        <CardMedia className={classes.rsvp} image={'./images/rsvp.jpg'} title="RSVP" />
 
+        <CardContent>
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
             <Controller render={({field}) => 
               <TextField {...field} className={classes.firstFormControl} error={!!errors.firstName} required label="First Name" />
@@ -110,20 +111,19 @@ export const Rsvp: React.FC = () => {
                 </Select>
               } control={control} name="hasTransportation" defaultValue="" rules={{ required: true }} />
             </FormControl>
-            <Typography variant="caption" color="error">
+            <Typography variant="caption" color="primary">
               IMPORTANT: We will have complimentary shuttles running from the Mexico City 
-              airport to Hacienda de Cortes on Friday, January 18th. Please send us a 
-              screenshot of your flight schedule by January 1st so that we can arrange the 
-              shuttle pickup times. We will provide a morning and afternoon shuttle return 
-              to the Mexico City airport on Sunday, February 20th. 
+              airport to Hacienda de Cortes on Friday, January 18th. Please submit your <Link component={RouterLink} to="/transportation" underline="always" color="secondary">shuttle registration</Link>
+              &nbsp;by January 1st so that we can arrange the shuttle pickup times. We will provide a morning and 
+              afternoon shuttle return to the Mexico City airport on Sunday, February 20th. 
             </Typography>
             
             <Controller render={({field}) => 
               <TextField {...field} multiline className={classes.formControl} label="Comments/Questions" />
             } control={control} name="comment" defaultValue=""/>
             
-            <Typography variant="caption" color="error">
-              REMINDER: <Link component={RouterLink} to="/destination" underline="none" color="error">Hotel information is found on our website</Link>
+            <Typography variant="caption" color="primary">
+              REMINDER: Hotel information is found on <Link component={RouterLink} to="/destination" underline="always" color="secondary">our website.</Link>
             </Typography>
 
             <FormControl className={classes.formControl}>

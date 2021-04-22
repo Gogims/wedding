@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, FormControl, Grid, IconButton, InputLabel, makeStyles, Snackbar, TextField, Theme, Typography } from "@material-ui/core";
+import { Button, Card, CardContent, CardMedia, FormControl, Grid, IconButton, InputLabel, makeStyles, Snackbar, TextField, Theme, Typography } from "@material-ui/core";
 import React from "react";
 import { useForm, Controller } from 'react-hook-form';
 import axios from "axios";
@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(5)
+  },
+  shuttle: {
+    height: 150
   },
   form: {
     paddingTop: theme.spacing(0),
@@ -75,11 +78,10 @@ export const TransportationForm: React.FC = () => {
     <Grid container justify="center">
       <Grid item xs={11} sm={6} md={4}>
         <Card className={classes.root}>
+          <CardMedia className={classes.shuttle} image={'./images/shuttle.jpg'} title="Shuttle Registration" />
+          
           <CardContent>
-            <Typography gutterBottom variant="h5">
-                Shuttle Registration
-            </Typography>
-            <Typography variant="caption" color="error">
+            <Typography variant="caption" color="primary" align="center" component="p">
               Please submit by <b>January 1st, 2022</b>.
             </Typography>
 
