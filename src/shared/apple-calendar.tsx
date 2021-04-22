@@ -11,20 +11,9 @@ const useStyles = makeStyles(() => ({
 
 export const AppleCalendar: React.FC = () => {
     const classes = useStyles();
-    const handleClick = async () => {
-        const response = await axios.get('./calendar.ics');
-        const blob = new Blob([response.data], { type: 'text/calendar'});
-        const url = window.URL.createObjectURL(blob);
-
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = "calendar"
-        link.click();
-        window.URL.revokeObjectURL(url);
-    }
 
     return (
-        <Button className={classes.button} onClick={handleClick}>
+        <Button className={classes.button} href="webcal://wedding-contact-form.s3.us-east-2.amazonaws.com/calendar.ics">
             <AppleIcon /> &nbsp;Add To Apple Calendar
         </Button>
     );
