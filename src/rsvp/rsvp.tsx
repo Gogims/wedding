@@ -113,9 +113,10 @@ export const Rsvp: React.FC = () => {
             </FormControl>
             <Typography variant="caption" color="primary">
               IMPORTANT: We will have complimentary shuttles running from the Mexico City 
-              airport to Hacienda de Cortes on Friday, January 18th. Please submit your <Link component={RouterLink} to="/transportation" underline="always" color="secondary">shuttle registration</Link>
-              &nbsp;by January 1st so that we can arrange the shuttle pickup times. We will provide a morning and 
-              afternoon shuttle return to the Mexico City airport on Sunday, February 20th. 
+              airport to Hacienda de Cortes on Friday, February 18th. We will provide a morning and 
+              afternoon shuttle return to the Mexico City airport on Sunday, February 20th. Please submit 
+              your <Link component={RouterLink} to="/transportation" underline="always" color="secondary">shuttle registration</Link>
+              &nbsp;by January 1st so that we can arrange the shuttle pickup times.
             </Typography>
             
             <Controller render={({field}) => 

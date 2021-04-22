@@ -1,6 +1,6 @@
-import { Avatar, Button, Card, CardActions, CardContent, CardHeader, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Avatar, Button, Card, CardActions, CardContent, CardHeader, Grid, Link, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
-import { Pinterest, Twitter, Instagram, Facebook, } from '@material-ui/icons';
+import { WhatsApp, Language, Email, Phone } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const Hacienda: React.FC = () => {
+export const Accomodation: React.FC = () => {
     const classes = useStyles();
 
     return (
@@ -48,37 +48,38 @@ export const Hacienda: React.FC = () => {
             <CardContent>
                 <div className={classes.content}>
                     <p>
-                        We have carefully selected our wedding venue for our guests to experience an authentic cultural immersion.
-                        Hacienda de Cortes was a sugar cane estate founded by Hernan Cortes in 1530. It’s historic past transcends
-                        through its stone walls, lush gardens, and architectural magnificence.
+                        <b>To make hotel reservations:</b>
                     </p>
                     <p>
-                        We chose this XVI century estate to open our guest’s minds to Mexico’s rich history, and to expose them to the
-                        traditions and customs of Salma's home country. For a stress-free experience, we encourage you to make
-                        your reservation at the hacienda’s hotel and spa. Booking information is found below.
+                        <span>We have negotiated a 10-15% discount on the nightly rates for guests atteding our wedding. Please refer to the </span>
+                        <Link color="secondary" underline="always" target="_blank"
+                            href="https://docs.google.com/spreadsheets/d/12toeVoWXb7GvB1SsJnTvrDVBV-604PcbDm9a0T0h2tM/edit#gid=1999678424">
+                            price table
+                        </Link> 
+                        <span> for rates. To make your reservation, please email the hotel or use whatsapp to text/call using the links below.</span>
                     </p>
                 </div>
             </CardContent>
             <CardActions>
                 <Grid container>
                     <Grid item xs={6} md={3}>
-                        <Button size="small" className={classes.button} href="https://www.facebook.com/haciendadecortes" target="_blank">
-                            <Facebook className={classes.icon} /> Facebook
+                        <Button size="small" className={classes.button} href="https://wa.me/527773158844">
+                            <WhatsApp className={classes.icon} /> WhatsApp
                         </Button>
                     </Grid>
                     <Grid item xs={6} md={3}>
-                        <Button size="small" className={classes.button} href="https://www.instagram.com/hacienda_de_cortes/" target="_blank">
-                            <Instagram className={classes.icon} /> Instagram
+                        <Button size="small" className={classes.button} href="mailto:reservaciones@hotelhaciendadecortes.com.mx">
+                            <Email className={classes.icon} /> Email
                         </Button>
                     </Grid>
                     <Grid item xs={6} md={3}>
-                        <Button size="small" className={classes.button} href="https://es.pinterest.com/HcdadeCortes/" target="_blank">
-                            <Pinterest className={classes.icon} /> Pinterest
+                        <Button size="small" className={classes.button} href="https://www.hotelhaciendadecortes.com.mx/" target="_blank">
+                            <Language className={classes.icon} /> Website
                         </Button>
                     </Grid>
                     <Grid item xs={6} md={3}>
-                        <Button size="small" className={classes.button} href="https://twitter.com/hacienda_cortes" target="_blank">
-                            <Twitter className={classes.icon} /> Twitter
+                        <Button size="small" className={classes.button} href="tel:800(220)7697">
+                            <Phone className={classes.icon} /> Phone
                         </Button>
                     </Grid>
                 </Grid>
@@ -87,4 +88,4 @@ export const Hacienda: React.FC = () => {
     );
 }
 
-export default Hacienda;
+export default Accomodation;

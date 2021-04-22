@@ -15,7 +15,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: theme.spacing(5)
   },
   shuttle: {
-    height: 150
+    height: 150,
+    [theme.breakpoints.down('md')]: {
+      height: 100
+    }
   },
   form: {
     paddingTop: theme.spacing(0),
@@ -77,7 +80,7 @@ export const TransportationForm: React.FC = () => {
   return (
     <Grid container justify="center">
       <Grid item xs={11} sm={6} md={4}>
-        <Card className={classes.root}>
+        <Card id="shuttle" className={classes.root}>
           <CardMedia className={classes.shuttle} image={'./images/shuttle.jpg'} title="Shuttle Registration" />
           
           <CardContent>

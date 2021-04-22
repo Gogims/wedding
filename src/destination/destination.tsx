@@ -1,8 +1,9 @@
 import { Grid, makeStyles } from "@material-ui/core";
 import React from "react";
 import ImageSlider from "src/shared/image-slider";
+import Accomodation from "./components/accomodation";
+import Calendar from "./components/calendar";
 import Hacienda from "./components/hacienda";
-import Information from "./components/information";
 import OtherOption from "./components/other-options";
 import Schedule from "./components/schedule";
 import Trip from "./components/trip";
@@ -34,8 +35,8 @@ export const Destination: React.FC = () => {
 
       <Grid container className={classes.cards} justify="center">
         <Grid item xs={11} md={6}>
-          <Information />
-        </Grid>        
+          <Hacienda />
+        </Grid>
       </Grid>
       <Grid container className={classes.cards} justify="center">
         <Grid item xs={11} md={6}>
@@ -44,14 +45,19 @@ export const Destination: React.FC = () => {
       </Grid>
       <Grid container className={classes.cards} justify="center">
         <Grid item xs={11} md={6}>
-          <iframe title="Google Maps" className={classes.map} allowFullScreen
-            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAP}&q=Hotel+%26+Spa+Hacienda+de+Cortes`}>
-          </iframe>
+          <Calendar />
         </Grid>
       </Grid>
       <Grid container className={classes.cards} justify="center">
         <Grid item xs={11} md={6}>
-          <Hacienda />
+          <Accomodation />
+        </Grid>
+      </Grid>
+      <Grid container className={classes.cards} justify="center">
+        <Grid item xs={11} md={6}>
+          <iframe title="Google Maps" className={classes.map} allowFullScreen
+            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAP}&q=Hotel+%26+Spa+Hacienda+de+Cortes`}>
+          </iframe>
         </Grid>
       </Grid>
       <Grid container className={classes.cards} justify="center">

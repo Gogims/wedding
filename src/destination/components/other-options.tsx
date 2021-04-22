@@ -24,7 +24,7 @@ export const OtherOption: React.FC = () => {
         <Card variant="outlined" className={classes.card} >
             <CardContent>
                 <Typography color="textSecondary" gutterBottom className="inline-flex">
-                    <InfoIcon className="icon" /> Alternate Options
+                    <InfoIcon className="icon" /> Alternate Accomodations
               </Typography>
                 <div className={classes.content}>
                     <p className={classes.information}>
@@ -37,7 +37,7 @@ export const OtherOption: React.FC = () => {
                                 href="https://www.booking.com/hotel/mx/camino-real-sumiya-cuernavaca.en.html?aid=1693558&checkin_monthday=18&checkin_month=2&checkin_year=2022&checkout_monthday=20&checkout_month=2&checkout_year=2022&no_rooms=1&group_adults=2&room1=A%2CA">
                                 Camino Real Sumiya Cuernavaca
                             </Link>
-                            <span> ($$$$) - Japanese style property, 10-minute drive from hacienda, 25-minutes from downtown.</span>
+                            <span> ($$$$) - 10-minute drive from hacienda, 25-minutes from downtown.</span>
                         </li>
                         <li>
                             <Link color="secondary" underline="always" target="_blank"
@@ -62,7 +62,7 @@ export const OtherOption: React.FC = () => {
                         </li>
                     </ul>
                     
-                    <p>Airbnb is also an option, please use “Cuernavaca Centro” as the location in your search.</p>
+                    <p>Airbnb is also an option. You can use “Cuernavaca Centro” as the location in your search.</p>
                     <p>If you need help with your  accommodations, please don’t hesitate to get in touch with Salma. After all, she is a travel guru ;)</p>
                 </div>
             </CardContent>
