@@ -1,7 +1,6 @@
 import React from "react";
 import AppleIcon from '@material-ui/icons/Apple';
 import { Button, makeStyles } from "@material-ui/core";
-import axios from "axios";
 
 const useStyles = makeStyles(() => ({
     button: {
