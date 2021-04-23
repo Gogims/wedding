@@ -4,6 +4,7 @@ interface Utility {
     IsDesktop: () => boolean;
     toBase64Async: (file: File) => Promise<string>;
     getCleanTag: (hashtag: string) => string;
+    isAppleDevice: () => boolean;
 };
 
 const utility: Utility = {
@@ -32,6 +33,9 @@ const utility: Utility = {
         return trimmedTag.startsWith('#') ? 
             trimmedTag.substring(1) : 
             trimmedTag;
+    },
+    isAppleDevice: () => {
+        return /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
     }
 };
 

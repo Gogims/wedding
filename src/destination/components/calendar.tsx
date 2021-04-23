@@ -2,6 +2,7 @@ import { Card, CardActions, CardContent, Grid, makeStyles, Theme } from "@materi
 import React from "react";
 import AppleCalendar from "src/shared/apple-calendar";
 import GoogleCalendar from "src/shared/google-calendar";
+import utility from "src/shared/utility";
 
 const useStyles = makeStyles((theme: Theme) => ({
     card: {
@@ -21,13 +22,16 @@ export const Calendar: React.FC = () => {
         <Card variant="outlined" className={classes.card}>
             <CardContent>
                 <CardActions className={classes.buttons}>
-                <Grid container>
+                <Grid container justify="center">
                     <Grid item xs={12} md={6}>
                         <GoogleCalendar />
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <AppleCalendar />
-                    </Grid>
+                    {
+                        utility.isAppleDevice() && 
+                        <Grid item xs={12} md={6}>
+                            <AppleCalendar />
+                        </Grid>
+                    }
                 </Grid>
                 </CardActions>
             </CardContent>
