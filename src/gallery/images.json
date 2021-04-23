@@ -1,5 +1,23 @@
 [
     {
+        "title": "Machu Picchu",
+        "subTitle": "So much love!",
+        "isTall": true,
+        "src": "./images/gallery32.jpg"
+    },
+    {
+        "title": "Playa del Carmen",
+        "subTitle": "You can stand under my umbrella!",
+        "isTall": true,
+        "src": "./images/gallery36.jpg"
+    },
+    {
+        "title": "Austin",
+        "subTitle": "Picnic time!",
+        "isTall": true,
+        "src": "./images/gallery46.jpg"
+    },
+    {
         "title": "Cayo Arena (DR)",
         "subTitle": "This is not photoshopped!",
         "isTall": false,
@@ -54,9 +72,213 @@
         "src": "./images/gallery9.jpg"
     },
     {
+        "title": "San Antonio",
+        "subTitle": "Can I join the photo? -Brodie",
+        "isTall": true,
+        "src": "./images/gallery35.jpg"
+    },
+    {
+        "title": "San Antonio",
+        "subTitle": "New Year - 2021!",
+        "isTall": true,
+        "src": "./images/gallery34.jpg"
+    },
+    {
+        "title": "Península de Yucatán",
+        "subTitle": "Cold Water - Cenotes",
+        "isTall": true,
+        "src": "./images/gallery38.jpg"
+    },
+    {
+        "title": "Bocachica",
+        "subTitle": "Being fancy at the Caribbean Sea",
+        "isTall": false,
+        "src": "./images/gallery33.jpg"
+    },
+    {
+        "title": "Huacachina",
+        "subTitle": "The Oasis of America",
+        "isTall": false,
+        "src": "./images/gallery47.jpg"
+    },
+    {
         "title": "Paramour, San Antonio",
         "subTitle": "This is where we met a year before!",
         "isTall": false,
         "src": "./images/gallery10.jpg"
+    },
+    {
+        "title": "Huacachina",
+        "subTitle": "Feeling adventerous driving our boogie car",
+        "isTall": true,
+        "src": "./images/gallery16.jpg"
+    },
+    {
+        "title": "Cartagena",
+        "subTitle": "We take a picture at anything that is pink",
+        "isTall": true,
+        "src": "./images/gallery15.jpg"
+    },
+    {
+        "title": "Bogotá",
+        "subTitle": "Getting cozy and keeping ourselves warm",
+        "isTall": true,
+        "src": "./images/gallery14.jpg"
+    },
+    {
+        "title": "Piedra del Peñol",
+        "subTitle": "649 steps to get here!",
+        "isTall": false,
+        "src": "./images/gallery42.jpg"
+    },
+    {
+        "title": "San Antonio",
+        "subTitle": "New Year - 2020!",
+        "isTall": false,
+        "src": "./images/gallery43.jpg"
+    },
+    {
+        "title": "Vinicunca",
+        "subTitle": "Took us a lot to get here. Worth it!",
+        "isTall": false,
+        "src": "./images/gallery41.jpg"
+    },
+    {
+        "title": "Cancún",
+        "subTitle": "Don't look down! - José's mind",
+        "isTall": true,
+        "src": "./images/gallery39.jpg"
+    },
+    {
+        "title": "Bayahibe",
+        "subTitle": "New Year - 2019",
+        "isTall": true,
+        "src": "./images/gallery40.jpg"
+    },
+    {
+        "title": "Christ the Redeemer",
+        "subTitle": "Jesus approves",
+        "isTall": true,
+        "src": "./images/gallery44.jpg"
+    },
+    {
+        "title": "Playa del Carmen",
+        "subTitle": "We wanted to replace the zebra in the picture",
+        "isTall": false,
+        "src": "./images/gallery12.jpg"
+    },
+    {
+        "title": "Aguas Calientes",
+        "subTitle": "Preparing for Machu Picchu",
+        "isTall": false,
+        "src": "./images/gallery17.jpg"
+    },
+    {
+        "title": "Chile",
+        "subTitle": "We drink wine everywhere",
+        "isTall": false,
+        "src": "./images/gallery19.jpg"
+    },
+    {
+        "title": "Hierve el Agua",
+        "subTitle": "We drink wine everywhere",
+        "isTall": true,
+        "src": "./images/gallery13.jpg"
+    },
+    {
+        "title": "Salar de Uyuni",
+        "subTitle": "Jose was done with Salma",
+        "isTall": true,
+        "src": "./images/gallery21.jpg"
+    },
+    {
+        "title": "Las Terrenas",
+        "subTitle": "This is where Jose proposed",
+        "isTall": true,
+        "src": "./images/gallery22.jpg"
+    },
+    {
+        "title": "Bolivia",
+        "subTitle": "Enjoying a nice hot spring",
+        "isTall": false,
+        "src": "./images/gallery20.jpg"
+    },
+    {
+        "title": "Líneas de Nazca",
+        "subTitle": "Ready to take off - captain",
+        "isTall": false,
+        "src": "./images/gallery23.jpg"
+    },
+    {
+        "title": "Wimberly",
+        "subTitle": "Sunday morning vibes",
+        "isTall": false,
+        "src": "./images/gallery25.jpg"
+    },
+    {
+        "title": "Lima",
+        "subTitle": "Kisses and more kisses",
+        "isTall": true,
+        "src": "./images/gallery28.jpg"
+    },
+    {
+        "title": "Machu Picchu",
+        "subTitle": "This is not photoshopped",
+        "isTall": true,
+        "src": "./images/gallery18.jpg"
+    },
+    {
+        "title": "Bogotá",
+        "subTitle": "Team soda!",
+        "isTall": true,
+        "src": "./images/gallery24.jpg"
+    },
+    {
+        "title": "Bariloche",
+        "subTitle": "Switzerland in South America",
+        "isTall": false,
+        "src": "./images/gallery26.jpg"
+    },
+    {
+        "title": "Iguazu Falls",
+        "subTitle": "Natural division between 3 countries!",
+        "isTall": false,
+        "src": "./images/gallery27.jpg"
+    },
+    {
+        "title": "Rio de Janeiro",
+        "subTitle": "Contemplating the amazing view",
+        "isTall": false,
+        "src": "./images/gallery45.jpg"
+    },
+    {
+        "title": "San Antonio",
+        "subTitle": "New Year - 2018",
+        "isTall": false,
+        "src": "./images/gallery30.jpg"
+    },
+    {
+        "title": "Phoenix",
+        "subTitle": "Hot Air Balloon Festival",
+        "isTall": false,
+        "src": "./images/gallery31.jpg"
+    },
+    {
+        "title": "Playa del Carmen",
+        "subTitle": "Romantic dinner in a cave",
+        "isTall": false,
+        "src": "./images/gallery37.jpg"
+    },
+    {
+        "title": "Playa del Carmen",
+        "subTitle": "Living under a bubble",
+        "isTall": true,
+        "src": "./images/gallery11.jpg"
+    },
+    {
+        "title": "Las Terrenas",
+        "subTitle": "Influencer photo style",
+        "isTall": true,
+        "src": "./images/gallery29.jpg"
     }
 ]
