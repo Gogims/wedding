@@ -1,6 +1,6 @@
 import React from 'react';
 import WeddingCountdown from './components/wedding-countdown';
-import TimelineStory from './components/timeline-story';
+import TimelineStory from './components/timeline-story/timeline-story';
 import { Card, CardMedia, makeStyles, Theme } from '@material-ui/core';
 import utility from 'src/shared/utility';
 import HashtagForm from './components/hashtag-form';
