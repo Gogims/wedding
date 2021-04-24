@@ -30,8 +30,7 @@ export const Schedule: React.FC = () => {
 
     return (
         <Card variant="outlined" className={classes.card} >
-            <CardMedia className={classes.image} image={'./images/schedule.jpg'} title="Schedule" />
-            
+            <CardMedia className={classes.image} image={'./images/schedule.jpg'} title="Schedule" />            
         </Card>
     );
 }

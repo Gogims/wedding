@@ -47,17 +47,17 @@ export const Accomodation: React.FC = () => {
             } />
             <CardContent>
                 <div className={classes.content}>
-                    <p>
+                    <Typography>
                         <b>To make hotel reservations:</b>
-                    </p>
-                    <p>
+                    </Typography>
+                    <Typography>
                         <span>We have negotiated a 10-15% discount on the nightly rates for guests atteding our wedding. Please refer to the </span>
                         <Link color="secondary" underline="always" target="_blank"
                             href="https://docs.google.com/spreadsheets/d/12toeVoWXb7GvB1SsJnTvrDVBV-604PcbDm9a0T0h2tM/edit#gid=1999678424">
                             price table
                         </Link> 
                         <span> for rates. To make your reservation, please email the hotel or use whatsapp to text/call using the links below.</span>
-                    </p>
+                    </Typography>
                 </div>
             </CardContent>
             <CardActions>

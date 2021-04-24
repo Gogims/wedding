@@ -19,12 +19,8 @@ import storiesJson from "./stories.json";
 import Story from './story';
 
 const useStyles = makeStyles((theme: Theme) => ({
-  dateBlock: {
-    display: 'flex',
-    alignItems: 'center'
-  },
   date: {
-    flexGrow: 1
+    marginBottom: theme.spacing(2)
   },
   paper: {
     padding: '6px 16px',
