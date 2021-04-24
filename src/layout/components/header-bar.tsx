@@ -34,13 +34,13 @@ export const HeaderBar: React.FC<HeaderBarProps> = (props) => {
           <FavoriteIcon color="primary"/>
         </Typography>
         <Typography variant="h5" className={classes.menuButton}>
-          <Link component={RouterLink} to="/rsvp" underline="none">RSVP</Link>
+          <Link component={RouterLink} to="/transportation" underline="none">Transportation</Link>
         </Typography>
         <Typography className={classes.menuButton}>
           <FavoriteIcon color="primary"/>
         </Typography>
         <Typography variant="h5" className={classes.menuButton}>
-          <Link component={RouterLink} to="/transportation" underline="none">Transportation</Link>
+          <Link component={RouterLink} to="/rsvp" underline="none">RSVP</Link>
         </Typography>
         <Typography className={classes.menuButton}>
           <FavoriteIcon color="primary"/>
