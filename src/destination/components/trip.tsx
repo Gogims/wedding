@@ -1,6 +1,6 @@
 import { Card, CardContent, Link, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
-import { BeachAccess, LocationCity } from '@material-ui/icons';
+import { BeachAccess } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     card: {

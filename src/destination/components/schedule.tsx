@@ -1,6 +1,5 @@
-import { Card, CardActions, CardMedia, makeStyles } from "@material-ui/core";
+import { Card, CardMedia, makeStyles } from "@material-ui/core";
 import React from "react";
-import GoogleCalendar from "src/shared/google-calendar";
 
 const useStyles = makeStyles((theme) => ({
     card: {
