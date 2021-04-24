@@ -32,6 +32,7 @@ export const Trip: React.FC = () => {
                         home country! Salma is known as a travel guru and has put the following 
                         recommendations for you in Mexico City, Tulum, and Cancun.
                     </Typography>
+                    <br />
                     <Typography>
                         <span>For more information </span>
                         <Link color="secondary" underline="always" target="_blank"

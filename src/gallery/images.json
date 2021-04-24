@@ -6,10 +6,10 @@
         "src": "./images/gallery32.jpg"
     },
     {
-        "title": "Playa del Carmen",
-        "subTitle": "You can stand under my umbrella!",
+        "title": "Christ the Redeemer",
+        "subTitle": "Jesus approves",
         "isTall": true,
-        "src": "./images/gallery36.jpg"
+        "src": "./images/gallery44.jpg"
     },
     {
         "title": "Austin",
@@ -156,10 +156,10 @@
         "src": "./images/gallery40.jpg"
     },
     {
-        "title": "Christ the Redeemer",
-        "subTitle": "Jesus approves",
+        "title": "Playa del Carmen",
+        "subTitle": "You can stand under my umbrella!",
         "isTall": true,
-        "src": "./images/gallery44.jpg"
+        "src": "./images/gallery36.jpg"
     },
     {
         "title": "Playa del Carmen",

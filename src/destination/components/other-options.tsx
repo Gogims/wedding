@@ -66,6 +66,7 @@ export const OtherOption: React.FC = () => {
                     </ul>
                     
                     <Typography>Airbnb is also an option. You can use “Cuernavaca Centro” as the location in your search.</Typography>
+                    <br />
                     <Typography>
                         If you need help with your  accommodations, please don’t hesitate to get in touch with Salma. 
                         After all, she is a travel guru ;)

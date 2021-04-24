@@ -52,6 +52,7 @@ export const Hacienda: React.FC = () => {
                         Hacienda de Cortes was a sugar cane estate founded by Hernan Cortes in 1530. It’s historic past transcends
                         through its stone walls, lush gardens, and architectural magnificence.
                     </Typography>
+                    <br />
                     <Typography>
                         We chose this XVI century estate to open our guest’s minds to Mexico’s rich history, and to expose them to the
                         traditions and customs of Salma's home country. For a stress-free experience, we encourage you to make
