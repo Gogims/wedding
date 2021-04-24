@@ -124,7 +124,7 @@ export const Rsvp: React.FC = () => {
             } control={control} name="comment" defaultValue=""/>
             
             <Typography variant="caption" color="primary">
-              REMINDER: Hotel information is found on <Link component={RouterLink} to="/destination" underline="always" color="secondary">our website.</Link>
+              REMINDER: Hotel information is found on <Link component={RouterLink} to="/destination" underline="always" color="secondary" target="_blank">our website.</Link>
             </Typography>
 
             <FormControl className={classes.formControl}>

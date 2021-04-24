@@ -50,15 +50,15 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = (props) => {
             </MenuItem>
             <MenuItem onClick={handleClose}>
                 <Typography variant="h6">
-                    <Link component={RouterLink} to="/rsvp" underline="none" className={classes.menu}>
-                        <FavoriteIcon color="primary" className={classes.icon} /> RSVP
+                    <Link component={RouterLink} to="/transportation" underline="none" className={classes.menu}>
+                        <FavoriteIcon color="primary" className={classes.icon} /> Transportation
                     </Link>
                 </Typography>
             </MenuItem>
             <MenuItem onClick={handleClose}>
                 <Typography variant="h6">
-                    <Link component={RouterLink} to="/transportation" underline="none" className={classes.menu}>
-                        <FavoriteIcon color="primary" className={classes.icon} /> Transportation
+                    <Link component={RouterLink} to="/rsvp" underline="none" className={classes.menu}>
+                        <FavoriteIcon color="primary" className={classes.icon} /> RSVP
                     </Link>
                 </Typography>
             </MenuItem>
