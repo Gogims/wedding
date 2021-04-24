@@ -192,10 +192,10 @@
         "src": "./images/gallery21.jpg"
     },
     {
-        "title": "Las Terrenas",
-        "subTitle": "This is where Jose proposed",
+        "title": "Playa del Carmen",
+        "subTitle": "Living under a bubble",
         "isTall": true,
-        "src": "./images/gallery22.jpg"
+        "src": "./images/gallery11.jpg"
     },
     {
         "title": "Bolivia",
@@ -270,15 +270,9 @@
         "src": "./images/gallery37.jpg"
     },
     {
-        "title": "Playa del Carmen",
-        "subTitle": "Living under a bubble",
-        "isTall": true,
-        "src": "./images/gallery11.jpg"
-    },
-    {
         "title": "Las Terrenas",
-        "subTitle": "Influencer photo style",
+        "subTitle": "This is where Jose proposed",
         "isTall": true,
-        "src": "./images/gallery29.jpg"
+        "src": "./images/gallery22.jpg"
     }
 ]

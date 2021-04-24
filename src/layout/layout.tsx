@@ -19,11 +19,7 @@ export const Layout: React.FC = () => {
     },
     typography: {
       fontFamily: [
-        'Roboto', 
-        'Helvetica', 
-        'Arial', 
-        'sans-serif',
-        'Marck Script'
+        'Roboto'
       ].join(',')
     }
   });

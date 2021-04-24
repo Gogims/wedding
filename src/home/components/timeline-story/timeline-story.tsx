@@ -60,11 +60,6 @@ export const TimelineStory: React.FC = () => {
     <>
       <Timeline align="alternate">
         <TimelineItem>
-          <TimelineOppositeContent className={classes.dateBlock}>
-            <Typography variant="body2" color="textSecondary" className={classes.date}>
-              July 7th, 2017 <br/> San Antonio, TX
-            </Typography>
-          </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot color="primary">
               <FavoriteIcon />
@@ -72,6 +67,9 @@ export const TimelineStory: React.FC = () => {
             <TimelineConnector className={classes.secondaryTail} />
           </TimelineSeparator>
           <TimelineContent>
+            <Typography variant="body2" color="textSecondary" className={classes.date}>
+              July 7th, 2017 <br/> San Antonio, TX
+            </Typography>
             <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[0], stories[1]])}>
               <Typography variant="h6" component="h1">
                 The Shared Elevator
@@ -89,11 +87,6 @@ export const TimelineStory: React.FC = () => {
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
-          <TimelineOppositeContent className={classes.dateBlock}>
-            <Typography variant="body2" color="textSecondary" className={classes.date}>
-              Sept. 1st, 2018 <br/> 9 countries
-            </Typography>
-          </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot color="primary" variant="outlined">
               <FlightIcon color="secondary"/>
@@ -101,6 +94,9 @@ export const TimelineStory: React.FC = () => {
             <TimelineConnector className={classes.primaryTail} />
           </TimelineSeparator>
           <TimelineContent>
+            <Typography variant="body2" color="textSecondary" className={classes.date}>
+              Sept. 1st, 2018 <br/> 9 countries
+            </Typography>
             <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[2], stories[3]])}>
               <Typography variant="h6" component="h1">
                 The South American Trip
@@ -118,11 +114,6 @@ export const TimelineStory: React.FC = () => {
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
-          <TimelineOppositeContent className={classes.dateBlock}>
-            <Typography variant="body2" color="textSecondary" className={classes.date}>
-              March 21st, 2020 <br/> Austin, Texas
-            </Typography>
-          </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot color="primary" variant="outlined">
               <HomeIcon />
@@ -130,6 +121,9 @@ export const TimelineStory: React.FC = () => {
             <TimelineConnector className={classes.secondaryTail} />
           </TimelineSeparator>
           <TimelineContent>
+            <Typography variant="body2" color="textSecondary" className={classes.date}>
+              March 21st, 2020 <br/> Austin, TX
+            </Typography>
             <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[4]])}>
               <Typography variant="h6" component="h1">
                 The Pandemic 
@@ -141,17 +135,15 @@ export const TimelineStory: React.FC = () => {
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
-        <TimelineOppositeContent className={classes.dateBlock}>
-            <Typography variant="body2" color="textSecondary" className={classes.date}>
-              January 16th, 2021 <br/> D.R.
-            </Typography>
-          </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot color="secondary">
               <WcIcon />
             </TimelineDot>
           </TimelineSeparator>
           <TimelineContent>
+            <Typography variant="body2" color="textSecondary" className={classes.date}>
+              January 16th, 2021 <br/> Dominican Republic
+            </Typography>
             <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[5]])}>
               <Typography variant="h6" component="h1">
                 The Proposal
