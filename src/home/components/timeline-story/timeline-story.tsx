@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 import Timeline from '@material-ui/lab/Timeline';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
@@ -18,7 +18,14 @@ import utility from 'src/shared/utility';
 import storiesJson from "./stories.json";
 import Story from './story';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
+  dateBlock: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  date: {
+    flexGrow: 1
+  },
   paper: {
     padding: '6px 16px',
   },
@@ -27,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
-  },
+  }
 }));
 
 export const TimelineStory: React.FC = () => {
@@ -53,9 +60,9 @@ export const TimelineStory: React.FC = () => {
     <>
       <Timeline align="alternate">
         <TimelineItem>
-          <TimelineOppositeContent>
-            <Typography variant="body2" color="textSecondary">
-              July 7th, 2017 • San Antonio, TX
+          <TimelineOppositeContent className={classes.dateBlock}>
+            <Typography variant="body2" color="textSecondary" className={classes.date}>
+              July 7th, 2017 <br/> San Antonio, TX
             </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -82,9 +89,9 @@ export const TimelineStory: React.FC = () => {
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
-          <TimelineOppositeContent>
-            <Typography variant="body2" color="textSecondary">
-              September 1st, 2018 • 9 countries
+          <TimelineOppositeContent className={classes.dateBlock}>
+            <Typography variant="body2" color="textSecondary" className={classes.date}>
+              Sept. 1st, 2018 <br/> 9 countries
             </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -111,9 +118,9 @@ export const TimelineStory: React.FC = () => {
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
-          <TimelineOppositeContent>
-            <Typography variant="body2" color="textSecondary">
-              March 21st, 2020 • Austin, Texas
+          <TimelineOppositeContent className={classes.dateBlock}>
+            <Typography variant="body2" color="textSecondary" className={classes.date}>
+              March 21st, 2020 <br/> Austin, Texas
             </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -134,9 +141,9 @@ export const TimelineStory: React.FC = () => {
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
-        <TimelineOppositeContent>
-            <Typography variant="body2" color="textSecondary">
-              January 16th, 2021 • Dominican Republic
+        <TimelineOppositeContent className={classes.dateBlock}>
+            <Typography variant="body2" color="textSecondary" className={classes.date}>
+              January 16th, 2021 <br/> D.R.
             </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
