@@ -27,18 +27,19 @@ export const Trip: React.FC = () => {
                     <BeachAccess className="icon" /> Extend Your Trip!
               </Typography>
                 <div className={classes.content}>
-                    <p>
+                    <Typography>
                         We highly recommend extending your trip to Mexico and exploring Salma’s 
                         home country! Salma is known as a travel guru and has put the following 
                         recommendations for you in Mexico City, Tulum, and Cancun.
-                    </p>
-                    <p>
+                    </Typography>
+                    <br />
+                    <Typography>
                         <span>For more information </span>
                         <Link color="secondary" underline="always" target="_blank"
                             href="https://docs.google.com/spreadsheets/d/1RRhiUpk5Jo_5W5rkLab-x33OuxsaUwr_TsstLOxBkwo/edit?usp=sharing">
                             click here!
                         </Link>
-                    </p>
+                    </Typography>
                 </div>
             </CardContent>
         </Card>

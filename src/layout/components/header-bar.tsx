@@ -46,7 +46,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = (props) => {
           <FavoriteIcon color="primary"/>
         </Typography>
         <Typography variant="h5" className={classes.menuButton}>
-          <Link href="https://www.blueprintregistry.com/registry/salma-and-gogi-wedding-registry-2-19-2022" underline="none">Gift Registry</Link>
+          <Link href="https://www.blueprintregistry.com/registry/salma-and-gogi-wedding-registry-2-19-2022" underline="none" target="_blank">Gift Registry</Link>
         </Typography>
         <Typography className={classes.menuButton}>
           <FavoriteIcon color="primary"/>

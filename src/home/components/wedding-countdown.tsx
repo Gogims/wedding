@@ -18,6 +18,16 @@ const useStyles = makeStyles((theme) => ({
     weddingCountdown: {
         textAlign: 'center'
     },
+    nameHeading: {
+        fontFamily: 'Dancing Script',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: theme.typography.h4.fontSize,
+            paddingTop: theme.spacing(5)
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: theme.typography.h3.fontSize
+        }
+    },
     heading: {
         fontFamily: 'Marck Script',
         [theme.breakpoints.down('sm')]: {
@@ -47,7 +57,7 @@ export const WeddingCountdown: React.FC = () => {
 
     return (
         <div className={classes.weddingCountdown}>
-            <Typography className={classes.heading}>
+            <Typography className={classes.nameHeading}>
                 <span>Salma Méndez Gómez</span> {breaker}
                 <span className={classes.separator}>&#38;</span> {breaker}
                 <span>José Reyes García</span>

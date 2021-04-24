@@ -64,7 +64,7 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = (props) => {
             </MenuItem>
             <MenuItem onClick={handleClose}>
                 <Typography variant="h6">
-                    <Link underline="none" className={classes.menu} href="https://www.blueprintregistry.com/registry/salma-and-gogi-wedding-registry-2-19-2022">
+                    <Link underline="none" className={classes.menu} href="https://www.blueprintregistry.com/registry/salma-and-gogi-wedding-registry-2-19-2022" target="_blank">
                         <FavoriteIcon color="primary" className={classes.icon} /> Gift Registry
                     </Link>
                 </Typography>

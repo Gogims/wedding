@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     },
     information: {
         marginBottom: theme.spacing(1)
+    },
+    list: {
+        fontSize: theme.typography.body1.fontSize
     }
 }));
 
@@ -27,11 +30,11 @@ export const OtherOption: React.FC = () => {
                     <InfoIcon className="icon" /> Alternate Accomodations
               </Typography>
                 <div className={classes.content}>
-                    <p className={classes.information}>
+                    <Typography className={classes.information}>
                         We understand some may want flexibility in their accommodations. 
                         We’ve put together a list of other recommended hotels in the area:
-                    </p>
-                    <ul>
+                    </Typography>
+                    <ul className={classes.list}>
                         <li>
                             <Link color="secondary" underline="always" target="_blank"
                                 href="https://www.booking.com/hotel/mx/camino-real-sumiya-cuernavaca.en.html?aid=1693558&checkin_monthday=18&checkin_month=2&checkin_year=2022&checkout_monthday=20&checkout_month=2&checkout_year=2022&no_rooms=1&group_adults=2&room1=A%2CA">
@@ -62,8 +65,12 @@ export const OtherOption: React.FC = () => {
                         </li>
                     </ul>
                     
-                    <p>Airbnb is also an option. You can use “Cuernavaca Centro” as the location in your search.</p>
-                    <p>If you need help with your  accommodations, please don’t hesitate to get in touch with Salma. After all, she is a travel guru ;)</p>
+                    <Typography>Airbnb is also an option. You can use “Cuernavaca Centro” as the location in your search.</Typography>
+                    <br />
+                    <Typography>
+                        If you need help with your  accommodations, please don’t hesitate to get in touch with Salma. 
+                        After all, she is a travel guru ;)
+                    </Typography>
                 </div>
             </CardContent>
         </Card>
