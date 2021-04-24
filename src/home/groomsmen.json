@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Jan Mario",
+        "location": "Santo Domingo, D.R.",
+        "description": "Best man, brother, role model of a father. Badass musician and warrior.",
+        "photo": "images/jan.jpg"
+    },
+    {
+        "name": "Rodrigo - Bombi",
+        "location": "Santo Domingo, D.R.",
+        "description": "Brother from another mother. Food enthusiast and Gaming conspirator.",
+        "photo": "images/rodrigo.jpg"
+    },
+    {
+        "name": "Rafael - Rafi",
+        "location": "Washington, D.C.",
+        "description": "Coconut pineapple rum connoisseur, expert at brunching & sailing.",
+        "photo": "images/rafael.jpg"
+    },
+    {
+        "name": "Nicolás - Nico",
+        "location": "New York City, N.Y.",
+        "description": "Life of the party, always cracking jokes left and right. Colombian bro.",
+        "photo": "images/nicolas.png"
+    },
+    {
+        "name": "Filippo",
+        "location": "Milan, Italy",
+        "description": "Cousin with an irreplaceable Dominican-Italian flow. The second most handsome member of the family.",
+        "photo": "images/filippo.jpg"
+    }
+]
