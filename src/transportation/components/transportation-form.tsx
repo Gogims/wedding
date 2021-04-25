@@ -1,13 +1,13 @@
-import { Button, Card, CardContent, CardMedia, FormControl, Grid, IconButton, InputLabel, makeStyles, Snackbar, TextField, Theme, Typography } from "@material-ui/core";
+import { Button, Card, CardContent, CardMedia, FormControl, Grid, IconButton, InputLabel, makeStyles, TextField, Theme, Typography } from "@material-ui/core";
 import React from "react";
 import { useForm, Controller } from 'react-hook-form';
 import axios from "axios";
-import { Alert } from "@material-ui/lab";
 import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from '@date-io/date-fns';
 import { PhotoCamera } from "@material-ui/icons";
 import utility from "src/shared/utility";
 import { FlightForm } from "src/shared/models/flight-form";
+import AlertSnackbar from "src/shared/alert-snackbar";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -53,28 +53,34 @@ export const TransportationForm: React.FC = () => {
   } = useForm();
   const [isSuccessful, setIsSuccessful] = React.useState(false);
   const [isError, setIsError] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const watchFlightImage: FileList = watch("flightImage", "");
   const imageName = watchFlightImage.length > 0 ?
     watchFlightImage[0].name :
     'Attach Flight Information';
 
   const onSubmit = async (data: FlightForm) => {
-    if (!!data.flightImage && data.flightImage.length > 0) {
-      const imageFile = data.flightImage?.item(0) as File;
-      data.flight = await utility.toBase64Async(imageFile);
-    }
-    const {flightImage, ...form} = data;
+    if (!isSubmitting) {
+      if (!!data.flightImage && data.flightImage.length > 0) {
+        const imageFile = data.flightImage?.item(0) as File;
+        data.flight = await utility.toBase64Async(imageFile);
+      }
+      const {flightImage, ...form} = data;
 
-    const url = process.env.REACT_APP_API as string;
-    const response = await axios.post([url, 'flight'].join('/'), {form: form});
-    
-    if (response.status === 200) {
-      setIsSuccessful(true);
-      const emptyData = Object.keys(data).reduce((emptyForm, prop) => ({...emptyForm, [prop]: ""}), {});
-      reset(emptyData);
+      setIsSubmitting(true);
+      const url = process.env.REACT_APP_API as string;
+      const response = await axios.post([url, 'flight'].join('/'), {form: form});
+      
+      if (response.status === 200) {
+        setIsSuccessful(true);
+        const emptyData = Object.keys(data).reduce((emptyForm, prop) => ({...emptyForm, [prop]: ""}), {});
+        reset(emptyData);
+      }
+      else
+        setIsError(true);
+        
+      setIsSubmitting(false);
     }
-    else
-      setIsError(true);
   };
 
   return (
@@ -122,24 +128,17 @@ export const TransportationForm: React.FC = () => {
               </FormControl>
 
               <FormControl className={classes.formControl}>
-                <Button type="submit" variant="contained" color="secondary">
+                <Button type="submit" variant="contained" color="secondary" disabled={isSubmitting}>
                   Submit
                 </Button>
               </FormControl>
             </form>
           </CardContent>
         </Card>
-
-        <Snackbar open={isSuccessful} autoHideDuration={6000} onClose={() => setIsSuccessful(false)}>
-          <Alert onClose={() => setIsSuccessful(false)} severity="success">
-            Form uploaded successfully!
-          </Alert>
-        </Snackbar>
-        <Snackbar open={isError} onClose={() => setIsError(false)}>
-          <Alert onClose={() => setIsError(false)} severity="error">
-            There was an error uploading the form. Please let us know at gogims@gmail.com or sssalma11@gmail.com
-          </Alert>
-        </Snackbar>
+        
+        <AlertSnackbar isSuccessful={isSuccessful} onSuccessClose={() => setIsSuccessful(false)} 
+                  successMessage="Form submited. Thanks for letting us know!" 
+                  isError={isError} onErrorClose={() => setIsError(false)}/>
       </Grid>
     </Grid>
   );

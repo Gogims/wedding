@@ -7,7 +7,7 @@
     },
     {
         "title": "Christ the Redeemer",
-        "subTitle": "Jesus approves",
+        "subTitle": "A dream come true",
         "isTall": true,
         "src": "./images/gallery44.jpg"
     },
@@ -55,7 +55,7 @@
     },
     {
         "title": "Phoenix",
-        "subTitle": "Balloooons",
+        "subTitle": "Hot Air Balloon Festival",
         "isTall": false,
         "src": "./images/gallery7.jpg"
     },
@@ -91,7 +91,7 @@
     },
     {
         "title": "Bocachica",
-        "subTitle": "Being fancy at the Caribbean Sea",
+        "subTitle": "Being fancy in the Caribbean",
         "isTall": false,
         "src": "./images/gallery33.jpg"
     },
@@ -103,7 +103,7 @@
     },
     {
         "title": "Paramour, San Antonio",
-        "subTitle": "This is where we met a year before!",
+        "subTitle": "This is the place where we met!",
         "isTall": false,
         "src": "./images/gallery10.jpg"
     },
@@ -115,7 +115,7 @@
     },
     {
         "title": "Cartagena",
-        "subTitle": "We take a picture at anything that is pink",
+        "subTitle": "We take a picture anywhere that is pink",
         "isTall": true,
         "src": "./images/gallery15.jpg"
     },
@@ -139,7 +139,7 @@
     },
     {
         "title": "Vinicunca",
-        "subTitle": "Took us a lot to get here. Worth it!",
+        "subTitle": "Took a lot of effort to get here. Worth it!",
         "isTall": false,
         "src": "./images/gallery41.jpg"
     },
@@ -181,7 +181,7 @@
     },
     {
         "title": "Hierve el Agua",
-        "subTitle": "We drink wine everywhere",
+        "subTitle": "México's hidden gems",
         "isTall": true,
         "src": "./images/gallery13.jpg"
     },
@@ -193,19 +193,19 @@
     },
     {
         "title": "Playa del Carmen",
-        "subTitle": "Living under a bubble",
+        "subTitle": "Living in a bubble",
         "isTall": true,
         "src": "./images/gallery11.jpg"
     },
     {
         "title": "Bolivia",
-        "subTitle": "Enjoying a nice hot spring",
+        "subTitle": "Enjoying natural hot springs",
         "isTall": false,
         "src": "./images/gallery20.jpg"
     },
     {
         "title": "Líneas de Nazca",
-        "subTitle": "Ready to take off - captain",
+        "subTitle": "Ready for take off - captain",
         "isTall": false,
         "src": "./images/gallery23.jpg"
     },
@@ -271,7 +271,7 @@
     },
     {
         "title": "Las Terrenas",
-        "subTitle": "This is where Jose proposed",
+        "subTitle": "This is where Gogi proposed!",
         "isTall": true,
         "src": "./images/gallery22.jpg"
     }
