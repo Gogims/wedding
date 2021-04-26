@@ -30,8 +30,8 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = (props) => {
 
   return (
     <Toolbar className={props.className}>
-        <IconButton edge="start" color="primary" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-            <MenuIcon />
+        <IconButton edge="start" color="primary" aria-controls="simple-menu" aria-haspopup="true" className={classes.menu} onClick={handleClick}>
+            <MenuIcon className={classes.icon} /> Menu
         </IconButton>
         <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
             <MenuItem onClick={handleClose}>
