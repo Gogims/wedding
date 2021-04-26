@@ -1,7 +1,7 @@
-import { Avatar, Button, Card, CardContent, CardMedia, Chip, FilledInput, FormControl, Grid, InputAdornment, makeStyles, Snackbar, Theme } from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
+import { Avatar, Button, Card, CardContent, CardMedia, Chip, FilledInput, FormControl, Grid, InputAdornment, makeStyles, Theme } from '@material-ui/core';
 import axios from 'axios';
 import React, { useState } from 'react'
+import AlertSnackbar from 'src/shared/alert-snackbar';
 import utility from 'src/shared/utility';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -23,6 +23,7 @@ export const HashtagForm: React.FC = () => {
     const [hashtag, setHashtag] = useState('');
     const [isSuccessful, setIsSuccessful] = React.useState(false);
     const [isError, setIsError] = React.useState(false);
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const hashtag = (e.target as HTMLInputElement).value;
@@ -45,14 +46,22 @@ export const HashtagForm: React.FC = () => {
         e.preventDefault();
         const tag = utility.getCleanTag(hashtag);
         const tags = !!tag ? hashtags.concat([tag]) : hashtags;
-        const url = process.env.REACT_APP_API as string;
-        const response = await axios.post([url, 'hashtag'].join('/'), {form: tags});
-        
-        if (response.status === 200) {
-          setIsSuccessful(true);
+
+        if (!isSubmitting && tags.length > 0)
+        {
+            setIsSubmitting(true);
+            const url = process.env.REACT_APP_API as string;
+            const response = await axios.post([url, 'hashtag'].join('/'), {form: tags});
+            
+            if (response.status === 200)
+                setIsSuccessful(true);
+            else
+                setIsError(true);
+
+            setHashtags([]);
+            setHashtag('');
+            setIsSubmitting(false);
         }
-        else
-          setIsError(true);
     };
 
     const tags = hashtags.map((tag, i) => (
@@ -70,7 +79,7 @@ export const HashtagForm: React.FC = () => {
                                 value={hashtag}
                                 onChange={handleChange}
                                 startAdornment={<InputAdornment position="start">#</InputAdornment>}
-                                endAdornment={<Button type="submit" color="primary" variant="contained">Submit</Button>}
+                                endAdornment={<Button type="submit" color="primary" variant="contained" disabled={isSubmitting}>Submit</Button>}
                             />
                         </FormControl>
                         <div>
@@ -79,16 +88,8 @@ export const HashtagForm: React.FC = () => {
                     </form>
                 </CardContent>
             </Card>
-            <Snackbar open={isSuccessful} autoHideDuration={6000} onClose={() => setIsSuccessful(false)}>
-                <Alert onClose={() => setIsSuccessful(false)} severity="success">
-                    Form uploaded successfully!
-                </Alert>
-            </Snackbar>
-            <Snackbar open={isError} onClose={() => setIsError(false)}>
-                <Alert onClose={() => setIsError(false)} severity="error">
-                    There was an error uploading the form. Please let us know at gogims@gmail.com or sssalma11@gmail.com
-                </Alert>
-            </Snackbar>
+            <AlertSnackbar isSuccessful={isSuccessful} onSuccessClose={() => setIsSuccessful(false)} 
+                successMessage="Thank You!" isError={isError} onErrorClose={() => setIsError(false)}/>
         </Grid>
     )
 }

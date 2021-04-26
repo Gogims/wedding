@@ -1,10 +1,10 @@
-import { Button, Card, CardContent, CardMedia, FormControl, Grid, InputLabel, Link, makeStyles, MenuItem, Select, Snackbar, TextField, Theme, Typography } from "@material-ui/core";
+import { Button, Card, CardContent, CardMedia, FormControl, Grid, InputLabel, Link, makeStyles, MenuItem, Select, TextField, Theme, Typography } from "@material-ui/core";
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { useForm, Controller } from 'react-hook-form';
 import { RsvpForm } from "src/shared/models/rsvp-form";
 import axios from "axios";
-import { Alert } from "@material-ui/lab";
+import AlertSnackbar from "src/shared/alert-snackbar";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -47,19 +47,25 @@ export const Rsvp: React.FC = () => {
   } = useForm();
   const [isSuccessful, setIsSuccessful] = React.useState(false);
   const [isError, setIsError] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const watchHasGuest: string = watch("hasGuest", "");
 
   const onSubmit = async (data: RsvpForm) => {
-    const url = process.env.REACT_APP_API as string;
-    const response = await axios.post([url, 'rsvp'].join('/'), {form: data});
-    
-    if (response.status === 200) {
-      setIsSuccessful(true);
-      const emptyData = Object.keys(data).reduce((emptyForm, prop) => ({...emptyForm, [prop]: ""}), {});
-      reset(emptyData);
+    if (!isSubmitting) {
+      setIsSubmitting(true);
+      const url = process.env.REACT_APP_API as string;
+      const response = await axios.post([url, 'rsvp'].join('/'), {form: data});
+      
+      if (response.status === 200) {
+        setIsSuccessful(true);
+        const emptyData = Object.keys(data).reduce((emptyForm, prop) => ({...emptyForm, [prop]: ""}), {});
+        reset(emptyData);
+      }
+      else
+        setIsError(true);
+        
+      setIsSubmitting(false);
     }
-    else
-      setIsError(true);
   };
 
   return (
@@ -128,24 +134,17 @@ export const Rsvp: React.FC = () => {
             </Typography>
 
             <FormControl className={classes.formControl}>
-              <Button type="submit" variant="contained" color="secondary">
+              <Button type="submit" variant="contained" color="secondary" disabled={isSubmitting}>
                 Submit
               </Button>
             </FormControl>
           </form>
         </CardContent>
       </Card>
-
-      <Snackbar open={isSuccessful} autoHideDuration={6000} onClose={() => setIsSuccessful(false)}>
-        <Alert onClose={() => setIsSuccessful(false)} severity="success">
-          Form uploaded successfully!
-        </Alert>
-      </Snackbar>
-      <Snackbar open={isError} onClose={() => setIsError(false)}>
-        <Alert onClose={() => setIsError(false)} severity="error">
-          There was an error uploading the form. Please let us know at gogims@gmail.com or sssalma11@gmail.com
-        </Alert>
-      </Snackbar>
+      
+      <AlertSnackbar isSuccessful={isSuccessful} onSuccessClose={() => setIsSuccessful(false)} 
+                successMessage="Form submited. Thanks for letting us know!" 
+                isError={isError} onErrorClose={() => setIsError(false)}/>
     </Grid>
   );
 }

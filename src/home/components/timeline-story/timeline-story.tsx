@@ -65,7 +65,7 @@ export const TimelineStory: React.FC = () => {
             <Typography variant="body2" color="textSecondary" className={classes.date}>
               July 7th, 2017 <br/> San Antonio, TX
             </Typography>
-            <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[0], stories[1]])}>
+            <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[0], stories[1], stories[2]])}>
               <Typography variant="h6" component="h1">
                 The Shared Elevator
               </Typography>
@@ -76,6 +76,12 @@ export const TimelineStory: React.FC = () => {
               {
                 !isDesktop && <Typography>
                   {stories[1]}
+                </Typography>
+              }
+              <br/>
+              {
+                !isDesktop && <Typography>
+                  {stories[2]}
                 </Typography>
               }
             </Paper>
@@ -92,17 +98,17 @@ export const TimelineStory: React.FC = () => {
             <Typography variant="body2" color="textSecondary" className={classes.date}>
               Sept. 1st, 2018 <br/> 9 countries
             </Typography>
-            <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[2], stories[3]])}>
+            <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[3], stories[4]])}>
               <Typography variant="h6" component="h1">
                 The South American Trip
               </Typography>
               <Typography>
-                <Story story={stories[2]} length={52}/>
+                <Story story={stories[3]} length={52}/>
               </Typography>
               <br/>
               {
                 !isDesktop && <Typography>
-                  {stories[3]}
+                  {stories[4]}
                 </Typography>
               }
             </Paper>
@@ -119,12 +125,12 @@ export const TimelineStory: React.FC = () => {
             <Typography variant="body2" color="textSecondary" className={classes.date}>
               March 21st, 2020 <br/> Austin, TX
             </Typography>
-            <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[4]])}>
+            <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[5]])}>
               <Typography variant="h6" component="h1">
                 The Pandemic 
               </Typography>
               <Typography>
-                <Story story={stories[4]} length={50}/>
+                <Story story={stories[5]} length={50}/>
               </Typography>
             </Paper>
           </TimelineContent>
@@ -139,12 +145,12 @@ export const TimelineStory: React.FC = () => {
             <Typography variant="body2" color="textSecondary" className={classes.date}>
               January 16th, 2021 <br/> Dominican Republic
             </Typography>
-            <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[5]])}>
+            <Paper elevation={3} className={classes.paper} onClick={() => handleClickStory([stories[6]])}>
               <Typography variant="h6" component="h1">
                 The Proposal
               </Typography>
               <Typography>
-                <Story story={stories[5]} length={50}/>
+                <Story story={stories[6]} length={50}/>
               </Typography>
             </Paper>
           </TimelineContent>
