@@ -78,7 +78,7 @@ export const Accomodation: React.FC = () => {
                         </Button>
                     </Grid>
                     <Grid item xs={6} md={3}>
-                        <Button size="small" className={classes.button} href="tel:800(220)7697">
+                        <Button size="small" className={classes.button} href="tel:+527773158844">
                             <Phone className={classes.icon} /> Phone
                         </Button>
                     </Grid>
