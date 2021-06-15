@@ -1,6 +1,10 @@
 import { Card, CardMedia, makeStyles } from "@material-ui/core";
 import React from "react";
 
+type ScheduleProps = {
+    imageName: string;
+};
+
 const useStyles = makeStyles((theme) => ({
     card: {
         maxWidth: 800
@@ -25,12 +29,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const Schedule: React.FC = () => {
+export const Schedule: React.FC<ScheduleProps> = (props) => {
     const classes = useStyles();
 
     return (
         <Card variant="outlined" className={classes.card} >
-            <CardMedia className={classes.image} image={'./images/schedule.jpg'} title="Schedule" />            
+            <CardMedia className={classes.image} image={`./images/${props.imageName}.jpg`} title="Schedule" />            
         </Card>
     );
 }

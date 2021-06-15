@@ -3,6 +3,8 @@ import React from "react";
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link as RouterLink } from "react-router-dom";
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import headerData from "src/layout/header.json";
+import { Header } from "src/shared/models/header";
 
 const useStyles = makeStyles((theme: Theme) => ({
     menu: {
@@ -27,6 +29,24 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = (props) => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const headers = headerData as Header[];
+    const headerElements = headers.map((h,i) => {
+        const header = h.isExternal ?
+          (<Link href={h.route} underline="none" target="_blank" className={classes.menu}>
+              <FavoriteIcon color="primary" className={classes.icon} />{h.name}
+            </Link>) :
+          (<Link component={RouterLink} underline="none" to={h.route} className={classes.menu}> 
+            <FavoriteIcon color="primary" className={classes.icon} /> {h.name}
+            </Link>)
+    
+        return (
+          <MenuItem key={i} onClick={handleClose}>
+              <Typography variant="h6">
+                  {header}
+              </Typography>
+          </MenuItem>
+        )
+      });
 
   return (
     <Toolbar className={props.className}>
@@ -34,48 +54,7 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = (props) => {
             <MenuIcon className={classes.icon} /> Menu
         </IconButton>
         <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-            <MenuItem onClick={handleClose}>
-                <Typography variant="h6">
-                    <Link component={RouterLink} to="/" underline="none" className={classes.menu}>
-                        <FavoriteIcon color="primary" className={classes.icon} /> Our Story
-                    </Link>
-                </Typography>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-                <Typography variant="h6">
-                    <Link component={RouterLink} to="/destination" underline="none" className={classes.menu}>
-                        <FavoriteIcon color="primary" className={classes.icon} /> When &amp; Where
-                    </Link>
-                </Typography>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-                <Typography variant="h6">
-                    <Link component={RouterLink} to="/transportation" underline="none" className={classes.menu}>
-                        <FavoriteIcon color="primary" className={classes.icon} /> Transportation
-                    </Link>
-                </Typography>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-                <Typography variant="h6">
-                    <Link component={RouterLink} to="/rsvp" underline="none" className={classes.menu}>
-                        <FavoriteIcon color="primary" className={classes.icon} /> RSVP
-                    </Link>
-                </Typography>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-                <Typography variant="h6">
-                    <Link underline="none" className={classes.menu} href="https://www.blueprintregistry.com/registry/salma-and-gogi-wedding-registry-2-19-2022" target="_blank">
-                        <FavoriteIcon color="primary" className={classes.icon} /> Gift Registry
-                    </Link>
-                </Typography>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-                <Typography variant="h6">
-                    <Link component={RouterLink} to="/gallery" underline="none" className={classes.menu}>
-                        <FavoriteIcon color="primary" className={classes.icon} /> Gallery
-                    </Link>
-                </Typography>
-            </MenuItem>
+            {headerElements}
         </Menu>
     </Toolbar>
   );

@@ -8,9 +8,14 @@ type AlertSnackbarProps = {
     successMessage: string;
     isError: boolean;
     onErrorClose: () => void;
+    errorMessage?: string;
 };
 
 export const AlertSnackbar: React.FC<AlertSnackbarProps> = (props) => {
+    const errorMessage = !props.errorMessage ?
+        'There was an error uploading the form. Please let us know at gogims@gmail.com or salma.mendezg@gmail.com' :
+        props.errorMessage;
+
     return (
         <>
             <Snackbar open={props.isSuccessful} autoHideDuration={6000} onClose={props.onSuccessClose}>
@@ -20,7 +25,7 @@ export const AlertSnackbar: React.FC<AlertSnackbarProps> = (props) => {
             </Snackbar>
             <Snackbar open={props.isError} onClose={props.onErrorClose}>
                 <Alert onClose={props.onErrorClose} severity="error">
-                    There was an error uploading the form. Please let us know at gogims@gmail.com or salma.mendezg@gmail.com
+                    {errorMessage}
                 </Alert>
             </Snackbar>
         </>

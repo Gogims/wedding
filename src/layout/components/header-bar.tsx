@@ -3,6 +3,8 @@ import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import Link from '@material-ui/core/Link';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import { Header } from "src/shared/models/header";
+import headerData from "src/layout/header.json";
 
 const useStyles = makeStyles((theme: Theme) => ({
   menuButton: {
@@ -18,42 +20,30 @@ type HeaderBarProps = {
 
 export const HeaderBar: React.FC<HeaderBarProps> = (props) => {
   const classes = useStyles();
+  const headers = headerData as Header[];
+  const headerElements = headers.map((h,i) => {
+    const header = h.isExternal ?
+      (<Link href={h.route} underline="none" target="_blank">{h.name}</Link>) :
+      (<Link component={RouterLink} to={h.route} underline="none">{h.name}</Link>)
+    const heartIcon = headers.length - 1 === i ?
+      <></> :
+      (<Typography className={classes.menuButton}><FavoriteIcon color="primary"/></Typography>)
+
+    return (
+      <div key={i}>
+        <Typography variant="h5" className={classes.menuButton}>
+          {header}
+        </Typography>
+        {heartIcon}
+      </div>
+    )
+  });
   
   return (
     <Toolbar className={props.className}>
-        <Typography variant="h5" className={classes.menuButton} >
-          <Link component={RouterLink} to="/" underline="none">Our Story</Link>
-        </Typography>
-        <Typography className={classes.menuButton}>
-          <FavoriteIcon color="primary"/>
-        </Typography>
-        <Typography variant="h5" className={classes.menuButton}>
-          <Link component={RouterLink} to="/destination" underline="none">When &amp; Where</Link>
-        </Typography>
-        <Typography className={classes.menuButton}>
-          <FavoriteIcon color="primary"/>
-        </Typography>
-        <Typography variant="h5" className={classes.menuButton}>
-          <Link component={RouterLink} to="/transportation" underline="none">Transportation</Link>
-        </Typography>
-        <Typography className={classes.menuButton}>
-          <FavoriteIcon color="primary"/>
-        </Typography>
-        <Typography variant="h5" className={classes.menuButton}>
-          <Link component={RouterLink} to="/rsvp" underline="none">RSVP</Link>
-        </Typography>
-        <Typography className={classes.menuButton}>
-          <FavoriteIcon color="primary"/>
-        </Typography>
-        <Typography variant="h5" className={classes.menuButton}>
-          <Link href="https://www.blueprintregistry.com/registry/salma-and-gogi-wedding-registry-2-19-2022" underline="none" target="_blank">Gift Registry</Link>
-        </Typography>
-        <Typography className={classes.menuButton}>
-          <FavoriteIcon color="primary"/>
-        </Typography>
-        <Typography variant="h5" className={classes.menuButton}>
-          <Link component={RouterLink} to="/gallery" underline="none">Gallery</Link>
-        </Typography>
+      {
+        headerElements
+      }
     </Toolbar>
   );
 }

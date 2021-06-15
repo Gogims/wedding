@@ -1,0 +1,16 @@
+{
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "guest": "Are you bringing a guest?",
+    "guestOptions": [
+        { "id": "yes", "name": "Yes" },
+        { "id": "no", "name": "No" }
+    ],
+    "guestName": "Guest Name(s)",
+    "hasShuttle": true,
+    "comments": "Comments/Questions",
+    "hasReminder": true,
+    "submit": "Submit",
+    "successMessage": "Form submited. Thanks for letting us know!"
+}

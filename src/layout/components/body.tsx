@@ -6,6 +6,7 @@ import Gallery from "src/gallery/gallery";
 import Gift from "src/gift/gift";
 import Home from "src/home/home";
 import Rsvp from "src/rsvp/rsvp";
+import Spanish from "src/spanish/spanish";
 import Transportation from "src/transportation/transportation";
 
 export const Body: React.FC = () => {
@@ -25,6 +26,9 @@ export const Body: React.FC = () => {
       </Route>
       <Route path="/gift">
         <Gift />
+      </Route>
+      <Route path="/spanish">
+        <Spanish />
       </Route>
       <Route path="/">
         <Home />

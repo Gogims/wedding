@@ -1,18 +1,15 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import Countdown, { CountdownRendererFn } from 'react-countdown';
-import utility from 'src/shared/utility';
+import utility from './utility';
 import Clock from './clock';
 
-const renderer : CountdownRendererFn = ({ days, hours, minutes, seconds, completed }) => {
-    if (completed) {
-      return (<span>Let's Go!</span>);
-    } else {
-        return (
-            <Clock days={days} hours={hours} minutes={minutes} seconds={seconds} />
-        );
-    }
-};
+type Label = {
+    daysLabel: string;
+    hoursLabel: string;
+    minutesLabel: string;
+    secondsLabel: string;
+}
 
 const useStyles = makeStyles((theme) => ({
     weddingCountdown: {
@@ -50,10 +47,19 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const WeddingCountdown: React.FC = () => {
+export const WeddingCountdown: React.FC<Label> = (props) => {
     const weddingDay = new Date(2022, 1, 19);
     const classes = useStyles();
     const breaker = utility.IsDesktop() ?  "" : <br/>;
+    const renderer : CountdownRendererFn = ({ days, hours, minutes, seconds, completed }) => {
+        if (completed) {
+        return (<span>Let's Go!</span>);
+        } else {
+            return (
+                <Clock days={days} hours={hours} minutes={minutes} seconds={seconds} {...props} />
+            );
+        }
+    };
 
     return (
         <div className={classes.weddingCountdown}>
