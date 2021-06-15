@@ -2,10 +2,6 @@ import { Avatar, Button, Card, CardActions, CardContent, CardHeader, Grid, Link,
 import React from "react";
 import { Pinterest, Twitter, Instagram, Facebook, WhatsApp, Language, Email, Phone } from '@material-ui/icons';
 
-type HaciendaProps = {
-    paragraphs: string[];
-}
-
 const useStyles = makeStyles((theme) => ({
     card: {
         maxWidth: 800
@@ -38,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const Hacienda: React.FC<HaciendaProps> = (props) => {
+export const Hacienda: React.FC = () => {
     const classes = useStyles();
 
     return (
@@ -55,26 +51,25 @@ export const Hacienda: React.FC<HaciendaProps> = (props) => {
             <CardContent>
                 <div className={classes.content}>
                     <Typography className={classes.information}>
-                        Hemos seleccionado cuidadosamente el lugar de nuestra boda para que nuestros invitados experimenten una 
-                        auténtica inmersión cultural. Hacienda de Cortes fue una finca de caña de azúcar fundada por Hernán Cortés 
-                        en 1530. Su pasado histórico trasciende a través de sus muros de piedra, exuberantes jardines y 
-                        magnificencia arquitectónica.
+                        Los esperamos en la Hacienda de Cortés en Cuernavaca para celebrar nuestra boda el Sábado, 19 de Febrero del 2022.
+                        Elegimos esta finca del siglo XIV que fue fundada por Hernán Cortés para que nuestros invitados del extranjero 
+                        conozcan la rica cultura e historia de México, en el país de origen de Salma. 
                     </Typography>
                     <Typography className={classes.information}>
-                        Elegimos esta finca del siglo XVI para abrir las mentes de nuestros huéspedes a la rica historia de México y 
-                        exponerlos a las tradiciones y costumbres del país de origen de Salma. Para una experiencia libre de estrés, 
-                        le recomendamos que haga su reserva en el hotel y spa de la hacienda. La información de reserva se encuentra a 
-                        continuación.
+                        Encontrarán información del hospedaje, horario y registro de regalos a continuación. Les pedimos que
+                        <b> por favor envíen su <Link href="#rsvp" color="secondary"underline="always">RSVP</Link> antes del
+                            31 de Diciembre del 2021.
+                        </b>
                     </Typography>
                     <Typography className={classes.information}>
-                        <span>Hemos negociado un descuento entre 10-15% en las tarifas nocturnas para los invitados de nuestra boda. Consulte </span>
+                        <span>
+                            Si desean hospedarse en la hacienda, hemos negociado un descuento en las tarifas de las habitaciones para los 
+                            invitados de nuestra boda. Aquí puede </span>
                         <Link color="secondary" underline="always" target="_blank"
                             href="https://docs.google.com/spreadsheets/d/12toeVoWXb7GvB1SsJnTvrDVBV-604PcbDm9a0T0h2tM/edit#gid=1999678424">
-                            los precios
+                            consultar los precios
                         </Link> 
-                        <span> para conocer las tarifas. Para reservar, envíe un correo electrónico al hotel o use whatsapp para enviar 
-                            un mensaje de texto o llamar usando los enlaces abajo.
-                        </span>
+                        <span> Para reservar, por favor contacten a la hacienda directamente por teléfono o por whatsapp usando los enlaces abajo.</span>
                     </Typography>
                 </div>
             </CardContent>
@@ -87,17 +82,17 @@ export const Hacienda: React.FC<HaciendaProps> = (props) => {
                     </Grid>
                     <Grid item xs={6} md={3}>
                         <Button size="small" className={classes.button} href="mailto:reservaciones@hotelhaciendadecortes.com.mx">
-                            <Email className={classes.icon} /> Email
+                            <Email className={classes.icon} /> Correo
                         </Button>
                     </Grid>
                     <Grid item xs={6} md={3}>
                         <Button size="small" className={classes.button} href="https://www.hotelhaciendadecortes.com.mx/" target="_blank">
-                            <Language className={classes.icon} /> Website
+                            <Language className={classes.icon} /> Web
                         </Button>
                     </Grid>
                     <Grid item xs={6} md={3}>
                         <Button size="small" className={classes.button} href="tel:+527773158844">
-                            <Phone className={classes.icon} /> Phone
+                            <Phone className={classes.icon} /> Teléfono
                         </Button>
                     </Grid>
                 </Grid>

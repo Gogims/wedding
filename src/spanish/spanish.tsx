@@ -3,13 +3,14 @@ import rsvp from './rsvp.json';
 import Reserve from 'src/shared/reserve';
 import WeddingCountdown from 'src/shared/wedding-countdown';
 import { Grid, Link, makeStyles, Theme } from '@material-ui/core';
-import hacienda from './hacienda.json';
 import Hacienda from './components/hacienda';
 import HaciendaMap from 'src/shared/hacienda-map';
 import LoveImage from 'src/shared/love-image';
 import { Link as RouterLink } from "react-router-dom";
 import Schedule from 'src/shared/schedule';
 import Historia from './components/historia';
+import Registry from './components/registry';
+import Gallery from './components/gallery';
 
 const useStyles = makeStyles((theme: Theme) => ({
   cards: {
@@ -23,7 +24,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 export const Spanish: React.FC = () => {
   const classes = useStyles();
-  const haciendaArray = hacienda as string[];
 
   return (    
     <Grid container justify="center" className={classes.cards}>
@@ -41,7 +41,7 @@ export const Spanish: React.FC = () => {
 
       <Grid container justify="center" className={classes.cards}>
         <Grid item xs={11} md={6} >
-          <Hacienda paragraphs={haciendaArray}/>
+          <Hacienda />
         </Grid>
       </Grid>
 
@@ -58,10 +58,24 @@ export const Spanish: React.FC = () => {
       </Grid>
 
       <Grid container justify="center" className={classes.cards}>
-        <Grid item xs={11} md={6} >
-          <Reserve {...rsvp}/>
+        <Grid item xs={11} md={6}>
+          <div id="rsvp">
+            <Reserve {...rsvp}/>
+          </div>
         </Grid>
       </Grid>
+
+    <Grid container justify="center" className={classes.cards}>
+      <Grid item xs={11} md={6}>
+        <Registry />
+      </Grid>
+    </Grid>
+
+    <Grid container justify="center" className={classes.cards}>
+      <Grid item xs={11} md={6}>
+        <Gallery />
+      </Grid>
+    </Grid>
 
       <Link component={RouterLink} to="/gallery" className={classes.link}>
         <LoveImage />

@@ -1,12 +1,18 @@
-import { Card, CardContent, makeStyles, Typography } from "@material-ui/core";
+import { Card, CardContent, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
     card: {
         maxWidth: 800
     },
+    title: {
+        fontFamily: 'Dancing Script',
+        display: 'inline-flex',
+        fontSize: theme.typography.h6.fontSize
+    },
     content: {
+        marginTop: theme.spacing(2),
         fontSize: theme.typography.h6.fontSize,
         [theme.breakpoints.down('sm')]: {
             fontSize: theme.typography.body1.fontSize
@@ -24,11 +30,11 @@ export const Historia: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <Card variant="outlined" className={classes.card} >
+        <Card variant="outlined" className={classes.card}>
             <CardContent>
-                <Typography color="textSecondary" gutterBottom className="inline-flex">
+                <Typography color="primary" gutterBottom className={classes.title}>
                     <FavoriteIcon className="icon" /> Nuestra Historia
-              </Typography>
+                </Typography>
                 <div className={classes.content}>
                     <Typography className={classes.information}>
                         El 7 de Julio del 2017, Salma y José compartieron un ascensor y se conocieron en una fiesta en San Antonio, Texas.
