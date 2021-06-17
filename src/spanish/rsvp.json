@@ -1,0 +1,17 @@
+{
+    "firstName": "Nombre(s)",
+    "lastName": "Apellido(s)",
+    "email": "Correo",
+    "guest": "¿Llevará invitados?",
+    "guestOptions": [
+        { "id": "yes", "name": "Sí" },
+        { "id": "no", "name": "No" }
+    ],
+    "guestName": "¿Cuántos invitados?",
+    "hasShuttle": false,
+    "comments": "Preguntas/Comentarios",
+    "hasReminder": false,
+    "submit": "Enviar",
+    "errorMessage": "Hubo un error enviando el formulario. Por favor, avísenos enviando un correo a gogims@gmail.com o salma.mendezg@gmail.com",
+    "successMessage": "Formulario enviado ¡Gracias por avisarnos!"
+}

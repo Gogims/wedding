@@ -1,20 +1,14 @@
 import React from 'react';
-import WeddingCountdown from './components/wedding-countdown';
+import WeddingCountdown from '../shared/wedding-countdown';
 import TimelineStory from './components/timeline-story/timeline-story';
-import { Card, CardMedia, Grid, makeStyles, Theme } from '@material-ui/core';
-import utility from 'src/shared/utility';
+import { Grid, makeStyles, Theme } from '@material-ui/core';
 import HashtagForm from './components/hashtag-form';
 import Showcase from './components/showcase';
 import bridesmaid from './bridesmaid.json';
 import groomsmen from './groomsmen.json';
+import LoveImage from 'src/shared/love-image';
 
 const useStyles = makeStyles((theme: Theme) => ({
-    card: {
-      width: '100%'
-    },
-    image: {
-        height: '100vh'
-    },
     countdown: {
       marginBottom: theme.spacing(5)
     },
@@ -24,21 +18,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     chooseYouImage: {
       maxWidth: '100%'
     }
-  }),
-);
+}));
 
 export const Home: React.FC = () => {
   const classes = useStyles();
-  const imageName = utility.IsDesktop() ? 'Home' : 'Home-mobile';
 
   return (
     <>
-      <Card className={classes.card} >
-        <CardMedia className={classes.image} image={`./images/${imageName}.jpg`} title="Love Is All You Need" />
-      </Card>
+      <LoveImage />
 
       <div className={classes.countdown}>
-        <WeddingCountdown />
+        <WeddingCountdown daysLabel="Days" hoursLabel="Hours" minutesLabel="Minutes" secondsLabel="Seconds" />
       </div>
       
       <TimelineStory />

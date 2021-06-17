@@ -3,10 +3,14 @@ import React from 'react';
 import utility from 'src/shared/utility';
 
 type ClockProps = {
-    days: number,
-    hours: number,
-    minutes: number,
-    seconds: number
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+    daysLabel: string;
+    hoursLabel: string;
+    minutesLabel: string;
+    secondsLabel: string;
 };
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -42,7 +46,7 @@ export const Clock: React.FC<ClockProps> = (props) => {
                             {props.days}
                         </Typography>
                         <Typography className={classes.typography}>
-                            Days
+                            {props.daysLabel}
                         </Typography>
                     </Paper>
                 </Grid>
@@ -52,7 +56,7 @@ export const Clock: React.FC<ClockProps> = (props) => {
                             {props.hours}
                         </Typography>
                         <Typography className={classes.typography}>
-                            Hours
+                            {props.hoursLabel}
                         </Typography>
                     </Paper>
                 </Grid>
@@ -62,7 +66,7 @@ export const Clock: React.FC<ClockProps> = (props) => {
                             {props.minutes}
                         </Typography>
                         <Typography className={classes.typography}>
-                            Minutes
+                            {props.minutesLabel}
                         </Typography>
                     </Paper>
                 </Grid>
@@ -72,7 +76,7 @@ export const Clock: React.FC<ClockProps> = (props) => {
                             {props.seconds}
                         </Typography>
                         <Typography className={classes.typography}>
-                            Seconds
+                            {props.secondsLabel}
                         </Typography>
                     </Paper>
                 </Grid>

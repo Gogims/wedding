@@ -4,6 +4,6 @@ export type RsvpForm = {
     email: string;
     hasGuest: string;
     guessName: string;
-    hasTransportation: string;
+    hasTransportation?: string;
     comment: string;
 }

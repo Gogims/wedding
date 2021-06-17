@@ -1,0 +1,37 @@
+[
+    {
+      "route":"/",
+      "name":"Our Story",
+      "isExternal":false
+    },
+    {
+      "route":"/destination",
+      "name":"When & Where",
+      "isExternal":false
+    },
+    {
+      "route":"/transportation",
+      "name":"Transportation",
+      "isExternal":false
+    },
+    {
+      "route":"/rsvp",
+      "name":"RSVP",
+      "isExternal":false
+    },
+    {
+      "route":"https://www.blueprintregistry.com/registry/salma-and-gogi-wedding-registry-2-19-2022",
+      "name":"Gift Registry",
+      "isExternal":true
+    },
+    {
+      "route":"/gallery",
+      "name":"Gallery",
+      "isExternal":false
+    },
+    {
+      "route":"/spanish",
+      "name":"Español",
+      "isExternal":false
+    }
+  ]

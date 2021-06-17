@@ -2,6 +2,10 @@ import { Avatar, Button, Card, CardActions, CardContent, CardHeader, Grid, makeS
 import React from "react";
 import { Pinterest, Twitter, Instagram, Facebook, } from '@material-ui/icons';
 
+type HaciendaProps = {
+    paragraphs: string[];
+}
+
 const useStyles = makeStyles((theme) => ({
     card: {
         maxWidth: 800
@@ -11,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             fontSize: theme.typography.body1.fontSize
         }
+    },
+    information: {
+        marginBottom: theme.spacing(3)
     },
     logo: {
         width: theme.spacing(10),
@@ -31,8 +38,9 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const Hacienda: React.FC = () => {
+export const Hacienda: React.FC<HaciendaProps> = (props) => {
     const classes = useStyles();
+    //const paragraphs = ;
 
     return (
         <Card variant="outlined" className={classes.card} >
@@ -47,17 +55,7 @@ export const Hacienda: React.FC = () => {
             } />
             <CardContent>
                 <div className={classes.content}>
-                    <Typography>
-                        We have carefully selected our wedding venue for our guests to experience an authentic cultural immersion.
-                        Hacienda de Cortes was a sugar cane estate founded by Hernan Cortes in 1530. It’s historic past transcends
-                        through its stone walls, lush gardens, and architectural magnificence.
-                    </Typography>
-                    <br />
-                    <Typography>
-                        We chose this XVI century estate to open our guest’s minds to Mexico’s rich history, and to expose them to the
-                        traditions and customs of Salma's home country. For a stress-free experience, we encourage you to make
-                        your reservation at the hacienda’s hotel and spa. Booking information is found below.
-                    </Typography>
+                    { props.paragraphs.map((info, i) => (<Typography key={i} className={classes.information}>{info}</Typography>)) }
                 </div>
             </CardContent>
             <CardActions>
