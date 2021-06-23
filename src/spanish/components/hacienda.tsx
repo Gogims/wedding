@@ -69,7 +69,7 @@ export const Hacienda: React.FC = () => {
                             href="https://docs.google.com/spreadsheets/d/12toeVoWXb7GvB1SsJnTvrDVBV-604PcbDm9a0T0h2tM/edit#gid=1999678424">
                             consultar los precios
                         </Link> 
-                        <span> Para reservar, por favor contacten a la hacienda directamente por teléfono o por whatsapp usando los enlaces abajo.</span>
+                        <span>. Para reservar, por favor contacten a la hacienda directamente por teléfono o por whatsapp usando los enlaces abajo.</span>
                     </Typography>
                 </div>
             </CardContent>

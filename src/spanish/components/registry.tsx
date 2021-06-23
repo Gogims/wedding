@@ -26,7 +26,7 @@ export const Registry: React.FC = () => {
             <CardContent>
                 <Typography className={classes.information}>
                     ¡La presencia de ustedes el dia de nuestra boda es el mejor regalo que nos pudieran dar! Si consideran 
-                    apoyarnos de otra manera, aceptamos contibuciones para que nuestra luna de miel en Europa sea inolvidable. 
+                    apoyarnos de otra manera, aceptamos contibuciones monetarias para que nuestra luna de miel en Europa sea inolvidable. 
                 </Typography>
 
                 <Typography className={classes.information}>

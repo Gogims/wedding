@@ -49,11 +49,11 @@ export const Historia: React.FC = () => {
                     </Typography>
 
                     <Typography className={classes.information}>
-                        El 16 de Enero del 2022, Salma y José disfrutaban del Mar Caribe caminando para ver el atardecer en Las Terrenas, 
+                        El 16 de Enero del 2021, Salma y José disfrutaban del Mar Caribe caminando para ver el atardecer en Las Terrenas, 
                         República Dominicana. Inesperadamente, Salma encontró una botella de vidrio enterrada en la arena sellada con un 
                         papel. El papel tenía un mensaje para que Salma viera el atardecer y pidiera un deseo con sus ojos cerrados.
                         Mientras Salma seguía las instrucciones del mensaje, José pasó al siguiente paso de su plan y se hincó mientras ella
-                        andaba distraída. Al girar, perplejada de la sorpresa, y con las lágrimas en las mejillas, ella dijo que... ¡Sí!
+                        andaba distraída. Al girar, perpleja de la sorpresa, y con las lágrimas en las mejillas, ella dijo que... ¡Sí!
                     </Typography>
                 </div>
             </CardContent>
