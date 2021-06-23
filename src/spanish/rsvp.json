@@ -7,7 +7,7 @@
         { "id": "yes", "name": "Sí" },
         { "id": "no", "name": "No" }
     ],
-    "guestName": "¿Cuántos invitados?",
+    "guestName": "¿Nombre(s) de invitado(s)?",
     "hasShuttle": false,
     "comments": "Preguntas/Comentarios",
     "hasReminder": false,
