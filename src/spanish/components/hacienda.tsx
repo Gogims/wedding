@@ -46,24 +46,24 @@ export const Hacienda: React.FC = () => {
                     Hotel &#38; Spa Hacienda de Cortes
                 </Typography>
             } subheader={
-                <div>Plaza Kennedy 90, Atlacomulco, 62560 Jiutepec, <br/>Cuernavaca, Mexico</div>
+                <div>Plaza Kennedy 90, Atlacomulco, 62560 Jiutepec, <br/>Cuernavaca, Morelos, Mexico</div>
             } />
             <CardContent>
                 <div className={classes.content}>
                     <Typography className={classes.information}>
-                        Los esperamos en la Hacienda de Cortés en Cuernavaca para celebrar nuestra boda el Sábado, 19 de Febrero del 2022.
-                        Elegimos esta finca del siglo XIV que fue fundada por Hernán Cortés para que nuestros invitados del extranjero 
-                        conozcan la rica cultura e historia de México, en el país de origen de Salma. 
+                        Los esperamos en la Hacienda de Cortés en Cuernavaca para celebrar nuestro matrimonio el Sábado, 19 de
+                        Febrero del 2022. Elegimos una finca del siglo XIV que fue fundada por Hernán Cortés para que nuestros
+                        invitados del extranjero conozcan la rica cultura e historia de México, en el país de origen de Salma. 
                     </Typography>
                     <Typography className={classes.information}>
-                        Encontrarán información del hospedaje, horario y registro de regalos a continuación. Les pedimos que
-                        <b> por favor envíen su <Link href="#rsvp" color="secondary"underline="always">RSVP</Link> antes del
-                            31 de Diciembre del 2021.
-                        </b>
+                        <b>Les pedimos que por favor envíen su <Link href="#rsvp" color="secondary"underline="always">RSVP</Link> antes del
+                            31 de Diciembre del 2021</b>
+                        <span>. Tenemos el gusto de comunicarles información del hospedaje, horario y registro de regalos a continuación.</span>
+                        
                     </Typography>
                     <Typography className={classes.information}>
                         <span>
-                            Si desean hospedarse en la hacienda, hemos negociado un descuento en las tarifas de las habitaciones para los 
+                            Si desean hospedarse en la hacienda, hemos negociado un descuento en los precios de las habitaciones para los 
                             invitados de nuestra boda. Aquí puede </span>
                         <Link color="secondary" underline="always" target="_blank"
                             href="https://docs.google.com/spreadsheets/d/12toeVoWXb7GvB1SsJnTvrDVBV-604PcbDm9a0T0h2tM/edit#gid=1999678424">
