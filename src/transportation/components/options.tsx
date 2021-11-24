@@ -16,7 +16,7 @@ export const Options: React.FC = () => {
                         </Typography>
                         <Typography variant="body1">
                             We will have complimentary shuttles for our guests from the airport to the hacienda
-                            on Friday, February 19th, and returning to the airport on Sunday, February 20th.&nbsp;
+                            on Friday, February 18th, and returning to the airport on Sunday, February 20th.&nbsp;
                             <b>If you will be using the shuttle, please&nbsp;
                             <Link href="#shuttle" underline="always" color="secondary">submit your shuttle registration</Link> no
                             later than January 1st, 2022</b>. This is extremely important because we need this to coordinate pick up/drop off times.
