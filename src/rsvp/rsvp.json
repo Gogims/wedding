@@ -1,4 +1,9 @@
 {
+    "isGoing": "Kindly respond by Dec 1st",
+    "isGoingOptions": [
+        { "id": "yes", "name": "Yes, see you in Mexico!" },
+        { "id": "no", "name": "No, respectfully decline" }
+    ],
     "firstName": "First Name",
     "lastName": "Last Name",
     "email": "Email",

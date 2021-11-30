@@ -1,4 +1,5 @@
 export type RsvpForm = {
+    isGoing: string;
     firstName: string;
     lastName: string;
     email: string;
