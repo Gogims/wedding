@@ -8,6 +8,8 @@ import AlertSnackbar from "src/shared/alert-snackbar";
 import { IdName } from "./models/id-name";
 
 type Label = {
+  isGoing: string;
+  isGoingOptions: IdName[];
   firstName: string;
   lastName: string;
   email: string;
@@ -64,6 +66,7 @@ export const Reserve: React.FC<Label> = (props) => {
   const [isError, setIsError] = React.useState(false);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const watchHasGuest: string = watch("hasGuest", "");
+  const watchIsGoing: string = watch("isGoing", "");
 
   const onSubmit = async (data: RsvpForm) => {
     if (!isSubmitting) {
@@ -90,6 +93,25 @@ export const Reserve: React.FC<Label> = (props) => {
 
         <CardContent>
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+            <FormControl className={classes.formControl}>
+              <InputLabel id="is-going" required>{props.isGoing}</InputLabel>
+              <Controller render={({ field: { onBlur, onChange, value } }) => 
+                <Select labelId="is-going" error={!!errors.isGoing} required onBlur={onBlur} value={value} onChange={e => {
+                  onChange(e);
+                  if (e.target.value === "no")
+                  {
+                    unregister("hasGuest");
+                    unregister("guessName");
+                    unregister("hasTransportation");
+                  }
+                }}>
+                    {
+                        props.isGoingOptions.map((o,i)=>(<MenuItem key={i} value={o.id}>{o.name}</MenuItem> ))
+                    }
+                </Select>
+              } control={control} name="isGoing" defaultValue="" rules={{ required: true }}/>
+            </FormControl>
+
             <Controller render={({field}) => 
               <TextField {...field} className={classes.firstFormControl} error={!!errors.firstName} required label={props.firstName} />
             } control={control} name="firstName" defaultValue="" rules={{ required: true }}/>
@@ -102,20 +124,22 @@ export const Reserve: React.FC<Label> = (props) => {
               <TextField type="email" {...field} className={classes.formControl} error={!!errors.email} required label={props.email} />
             } control={control} name="email" defaultValue="" rules={{ required: true }}/>
 
-            <FormControl className={classes.formControl}>
-              <InputLabel id="guest-label" required>{props.guest}</InputLabel>
-              <Controller render={({ field: { onBlur, onChange, value } }) => 
-                <Select labelId="guest-label" error={!!errors.hasGuest} required onBlur={onBlur} value={value} onChange={e => {
-                  onChange(e);
-                  if (e.target.value === "no")
-                    unregister("guessName");
-                }}>
-                    {
-                        props.guestOptions.map((o,i)=>(<MenuItem key={i} value={o.id}>{o.name}</MenuItem> ))
-                    }
-                </Select>
-              } control={control} name="hasGuest" defaultValue="" rules={{ required: true }}/>
-            </FormControl>
+            { watchIsGoing === "yes" && 
+              <FormControl className={classes.formControl}>
+                <InputLabel id="guest-label" required>{props.guest}</InputLabel>
+                <Controller render={({ field: { onBlur, onChange, value } }) => 
+                  <Select labelId="guest-label" error={!!errors.hasGuest} required onBlur={onBlur} value={value} onChange={e => {
+                    onChange(e);
+                    if (e.target.value === "no")
+                      unregister("guessName");
+                  }}>
+                      {
+                          props.guestOptions.map((o,i)=>(<MenuItem key={i} value={o.id}>{o.name}</MenuItem> ))
+                      }
+                  </Select>
+                } control={control} name="hasGuest" defaultValue="" rules={{ required: true }}/>
+              </FormControl>
+            }
 
             { watchHasGuest === "yes" && 
               <Controller render={({ field }) => 
@@ -123,8 +147,8 @@ export const Reserve: React.FC<Label> = (props) => {
               } control={control} name="guessName" defaultValue="" rules={{ required: true }}/>
             }
 
-            {
-              !props.hasShuttle ? <></>:
+            { !props.hasShuttle || watchIsGoing !== "yes" ? 
+              <></> :
               (
                 <>
                   <FormControl className={classes.formControl}>
