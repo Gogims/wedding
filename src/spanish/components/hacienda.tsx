@@ -57,7 +57,7 @@ export const Hacienda: React.FC = () => {
                     </Typography>
                     <Typography className={classes.information}>
                         <b>Les pedimos que por favor envíen su <Link href="#rsvp" color="secondary"underline="always">RSVP</Link> antes del
-                            31 de Diciembre del 2021</b>
+                            1 de Diciembre del 2021</b>
                         <span>. Tenemos el gusto de comunicarles información del hospedaje, horario y registro de regalos a continuación.</span>
                         
                     </Typography>

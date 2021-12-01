@@ -1,5 +1,5 @@
 {
-    "isGoing": "Favor de responder antes del 1ro de Diciembre",
+    "isGoing": "Favor de responder antes del 1ero de Diciembre",
     "isGoingOptions": [
         { "id": "yes", "name": "Asistiré con gusto" },
         { "id": "no", "name": "Lamento no poder asistir" }
